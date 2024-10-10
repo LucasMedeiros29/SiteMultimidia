@@ -8,8 +8,8 @@ header{
 }
 
 .ufabc{
-	padding-top: 3vw;
-    max-width: 7%; 
+	padding-top: 3em;
+    max-width: 7em; 
 }
 
 main{
@@ -17,22 +17,22 @@ main{
 }
 
 h1 {
-	font-size: 4vw; /* ajusta o tamanho da fonte, vw é uma unidade responsiva para vários tamanhos de tela */
-    margin-bottom: 1vw;
+	font-size: 4em; /* ajusta o tamanho da fonte, vw é uma unidade responsiva para vários tamanhos de tela */
+    margin-bottom: 0.2em;
 	font-weight: 600;
 	color: rgb(197, 34, 6);
-	padding-bottom: 1vw;
+	padding-bottom: 0.5em;
 }
 
 h2 {
-	font-size: 2.5vw;
-	padding-bottom: 2vw;
+	font-size: 2.5em;
+	padding-bottom: 2em;
 }
 
 footer{
-	font-size: 1vw;
-	padding-top: 3vw;
-	padding-bottom: 2vw;
+	font-size: 1em;
+	padding-top: 3em;
+	padding-bottom: 2em;
 	text-align: center;
 	background-color: lightgrey;
 }
@@ -41,65 +41,44 @@ footer{
 
 
 h3 {
-	font-size: 2vw;
-	padding-top: 3vw;
-	padding-bottom: 1vw;
+	font-size: 2em;
+	padding-top: 3em;
+	padding-bottom: 1em;
 	font-weight: 600;
 }
 
 .banner{
-    max-width: 25%;
-    margin-bottom: 3vw;
+    max-width: 25em;
+    margin-bottom: 3em;
 }
 
-.avatar{
-	max-width: 70vw;
-}
 
 .perfil{
-	max-width: 15vw;
+	max-width: 20em;
 }
 
 .resumo{
-	font-size: 1.25vw;
-	margin: 2vw 15vw 1vw 15vw;
+	font-size: 1.25em;
+	margin: 2em 15vw 1em 15vw;
 	text-align: justify;
-	text-indent: 2vw;
+	text-indent: 2em;
 }
 
 .legenda{
-	font-size: 1vw;
+	font-size: 1em;
 	font-style: italic;
-	margin-bottom: 1vw;
+	margin-bottom: 1em;
 }
 
-.audio{
-
-}
 
 li {
     list-style-type: none;
-    margin: 0 0 2vw 0;
-	font-size: 1vw;
+    margin: 0 0 2em 0;
+	font-size: 1em;
   }
 
 
 a {
 	text-decoration: none; /* retira o sublinhado do link */
 	color: black;
-}
-
-.audio-controls {
-    display: flex;
-    align-items: center;
-}
-
-.play, .pause {
-    width: 50px; /* Define largura dos botões */
-    height: 30px; /* Define altura dos botões */
-    margin: 0 5px;
-}
-
-.seek {
-    width: 200px; /* Largura do controle deslizante */
 }
