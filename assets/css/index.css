@@ -9,7 +9,7 @@ header{
 
 .ufabc{
 	padding-top: 3vw;
-    max-width: 8%; 
+    max-width: 7%; 
 }
 
 main{
@@ -21,11 +21,12 @@ h1 {
     margin-bottom: 1vw;
 	font-weight: 600;
 	color: rgb(197, 34, 6);
+	padding-bottom: 1vw;
 }
 
 h2 {
 	font-size: 2.5vw;
-	padding-bottom: 3vw;
+	padding-bottom: 2vw;
 }
 
 footer{
@@ -41,15 +42,40 @@ footer{
 
 h3 {
 	font-size: 2vw;
-	padding-bottom: 3vw;
+	padding-top: 3vw;
+	padding-bottom: 1vw;
 	font-weight: 600;
 }
 
 .banner{
-    max-width: 30%;
-    margin-bottom: 5vw;
+    max-width: 25%;
+    margin-bottom: 3vw;
 }
 
+.avatar{
+	max-width: 70vw;
+}
+
+.perfil{
+	max-width: 15vw;
+}
+
+.resumo{
+	font-size: 1.25vw;
+	margin: 2vw 15vw 1vw 15vw;
+	text-align: justify;
+	text-indent: 2vw;
+}
+
+.legenda{
+	font-size: 1vw;
+	font-style: italic;
+	margin-bottom: 1vw;
+}
+
+.audio{
+
+}
 
 li {
     list-style-type: none;
@@ -61,4 +87,19 @@ li {
 a {
 	text-decoration: none; /* retira o sublinhado do link */
 	color: black;
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+}
+
+.play, .pause {
+    width: 50px; /* Define largura dos botões */
+    height: 30px; /* Define altura dos botões */
+    margin: 0 5px;
+}
+
+.seek {
+    width: 200px; /* Largura do controle deslizante */
 }
