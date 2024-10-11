@@ -6,7 +6,7 @@ body, html {
 }
 
 body {
-    background: url('..lab1_gabriel//img/UFABC.jpg') no-repeat center center fixed;
+    background: url('../img/UFABC.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
