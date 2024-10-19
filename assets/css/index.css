@@ -90,3 +90,37 @@ a {
 	margin-top: 4em;
 	margin-bottom: 1em;
 }
+
+/* lab 2 */
+
+.celular{
+	max-width: 15em;
+}
+
+.grupo_cel{
+	max-width: 35em;
+}
+
+.handcam{
+	max-width: 20em;
+}
+
+.video-container {
+	max-width: 800px; /* Define o tamanho máximo que o vídeo pode ter */
+	margin: 0 auto; /* Centraliza o contêiner */
+	margin-bottom: 5em;
+}
+
+#meuVideo {
+	width: 100%; /* O vídeo ocupa 100% do contêiner */
+	height: auto; /* Mantém a proporção do vídeo */
+	border: 2px solid black;
+	border-radius: 10px;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+	display: block;
+}
+
+.storyboard{
+	max-width: 50vw;
+	text-align: center;
+}
