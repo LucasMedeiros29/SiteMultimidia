@@ -16,11 +16,162 @@
     <header>
         <a href="index.html"><img class="ufabc" src="assets/img/ufabc.png" alt="ufabc logo"></a>
         <h1>Aquisição de vídeo</h1>
+        <h2>Laboratório 2</h2>
     </header>
 
     <main>
+        <h3>Objetivos</h3>
+        <ul>
+            <li>Preparar fotos para os próximos laboratórios, com dispositivos diversos;</li>
+            <li>Preparar vídeos para os próximos laboratórios, com dispositivos diversos;</li>
+            <li>Utilizar o Google Colab e o OpenCV, para processar as imagens e vídeos com o Notebook.</li>
+        </ul>
+        <h3>Materiais</h3>
+        <ul>
+            <li>Filmadora Panasonic AG-AC90AP AVCCAM</li>
+            <li>Sony Handcam hdr-cx220</li>
+            <li>Ring light</li>
+            <li>Samsung galaxy S23</li>
+        </ul>
+        <h3>Metodologia</h3>
+        <p class="resumo">Inicialmente, foram realizadas as fotografias dos participantes do grupo com a câmera do celular (samsung s23), totalizando 5 fotos. O procedimento foi 
+            repetido para a Sony Handcam hdr-cx220 e a Filmadora Panasonic AG-AC90AP AVCCAM. Em seguida, a filmadora também foi utilizada para a gravação do vídeo roteirizado pelo Storyboard, que foi 
+            editado posteriormente utilizando o aplicativo Microsoft CLipchamp, onde alteramos o filtro, o áudio (remoção do original e adição de um novo) e inserimos textos para se 
+            assemelhar a um curta antigo. Com as fotos tiradas com o celular, utilizamos o aplicativo Krita para realizar a composição dos avatares de cada integrante, tentando tornar o mais realista 
+            possível. Na foto do grupo, substituímos o rosto de cada um pelo rosto do avatar, utilizando a mesma ferramenta.
+        </p>
+        <p class="resumo">Para a etapa de processamento de imagens, utilizamos o Google Colab e a ferramenta OpenCV para realizar o processamento de todas as imagens coletadas anteriormente, 
+            conforme os códigos descritos abaixo.
+        </p>
 
-    
+        <img src="assets/img/fotos lab 2/cod1.png" alt="código 1">
+        <p>import cv2 as cv #importa a biblioteca do opencv como cv</p>
+        <p>import numpy as np #importa a biblioteca do numpy</p>
+        <p>import matplotlib.pyplot as plt #importa a biblioteca matplotlib</p>
+
+        
+        <p class="resumo"></p>
+        <img src="assets/img/fotos lab 2/cod2.png" alt="código 1">
+        <p>img_gray = cv.imread(os.path.join(image_path,'grupo_avatar.jpg'), cv.IMREAD_GRAYSCALE) #lê a imagem e converte para a escala de cinza</p>
+        <p>plt.imshow(img_gray,'gray') #exibe a imagem</p>
+        <p>plt.show()</p>
+
+        <p class="resumo"></p>
+        <img src="assets/img/fotos lab 2/cod3.png" alt="código 1">
+        <p>from google.colab.patches import cv2_imshow # versão do Colab para o comando acima</p>
+        <p>cv2_imshow(img_gray)</p>
+
+        <p class="resumo"></p>
+        <img src="assets/img/fotos lab 2/cod4.png" alt="código 1">
+        <p>print(img_gray.shape) #exibe a dimensão da imagem</p>
+        <p>img2 = cv.resize(img_gray, None, fx=1.25, fy=1.25, interpolation = cv.INTER_CUBIC) #realiza o dimensionamento da imagem</p>
+        <p>print(img2.shape)</p>
+
+        <p class="resumo"></p>
+        <p><a href="assets/download/Lab2_Imagem_Video_v22.ipynb" download="Lab2_Imagem_Video_v22.ipynb">Clique aqui para baixar o arquivo do código utilizado</a></p>
+        
+
+        <h3>Fotos no celular</h3>
+        <img src="assets/img/fotos lab 2/celular/lucas_cel.jpg" alt="foto do Lucas (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunok_cel.jpg" alt="foto do BrunoK (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunon_cel.jpg" alt="foto do BrunoN (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/gabriel_cel.jpg" alt="foto do Gabriel (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/grupo_cel.jpg" alt="foto do grupo (celular)" class="handcam">
+
+
+        <h3>Fotos na Handcam Sony</h3>
+        <img src="assets/img/fotos lab 2/filmadora pequena/lucas_peq.JPG" alt="foto do Lucas (Handcam)" class="handcam">
+        <img src="assets/img/fotos lab 2/filmadora pequena/brunok_peq.JPG" alt="foto do BrunoK (Handcam)" class="handcam">
+        <img src="assets/img/fotos lab 2/filmadora pequena/brunon_peq.JPG" alt="foto do BrunoN (Handcam)" class="handcam">
+        <img src="assets/img/fotos lab 2/filmadora pequena/gabriel_peq.JPG" alt="foto do Gabriel (Handcam)" class="handcam">
+        <img src="assets/img/fotos lab 2/filmadora pequena/grupo_peq1.JPG" alt="foto do grupo (Handcam)" class="handcam">
+
+        <h3>Fotos na Filmadora Panasonic</h3>
+        <img src="assets/img/fotos lab 2/filmadora grande/lucas_grande.jpg" alt="foto do Lucas (Filmadora)" class="handcam">
+        <img src="assets/img/fotos lab 2/filmadora grande/brunok_grande.jpg" alt="foto do BrunoK (Filmadora)" class="handcam">
+        <img src="assets/img/fotos lab 2/filmadora grande/brunon_grande.jpg" alt="foto do BrunoN (Filmadora)" class="handcam">
+        <img src="assets/img/fotos lab 2/filmadora grande/gabriel_grande.jpg" alt="foto do Gabriel (Filmadora)" class="handcam">
+        <img src="assets/img/fotos lab 2/filmadora grande/grupo_grande1.jpg" alt="foto do grupo (Filmadora)" class="handcam">
+
+        <h3>Composições</h3>
+        <img src="assets/img/fotos lab 2/composição/lucas_avatar.jpg" alt="foto do Lucas (composta)" class="handcam">
+        <img src="assets/img/fotos lab 2/composição/brunok_avatar.jpg" alt="foto do BrunoK (composta)" class="handcam">
+        <img src="assets/img/fotos lab 2/composição/brunon_avatar.jpg" alt="foto do BrunoN (composta)" class="handcam">
+        <img src="assets/img/fotos lab 2/composição/gabriel_avatar.jpg" alt="foto do Gabriel (composta)" class="handcam">
+        <img src="assets/img/fotos lab 2/composição/grupo_avatar.jpg" alt="foto do grupo (composta)" class="handcam">
+
+        <h3>Storyboard</h3>
+
+        <h3>Vídeo final</h3>
+        <div class="video-container">
+            <video id="meuVideo" controls>
+                <source src="assets/video/video.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+        </div>
+
+        <h2>Processamento de imagens com OpenCV</h2>
+        <h3>Fotos no celular (escala de cinza)</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_cel_gray2.png" alt="foto do Lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_cel_gray.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_cel_gray2.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_cel_gray2.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_cel_gray2.png" alt="foto do grupo" class="handcam">
+
+        <h3>Fotos no celular (escala de cinza redimensionado)</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_cel_gray3.png" alt="foto do Lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_cel_gray2.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_cel_gray3.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_cel_gray3.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_cel_gray3.png" alt="foto do grupo" class="handcam">
+
+        <h3>Fotos na Handcam Sony (escala de cinza)</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_peq_gray2.png" alt="foto do Lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_peq_gray2.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_peq_gray2.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_peq_gray.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_peq_gray2.png" alt="foto do grupo" class="celular">
+
+        <h3>Fotos na Handcam Sony (escala de cinza redimensionado)</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_peq_gray3.png" alt="foto do Lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_peq_gray3.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_peq_gray3.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_peq_gray3.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_peq_gray3.png" alt="foto do grupo" class="celular">
+
+        <h3>Fotos na Filmadora Panasonic (escala de cinza)</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_grande_gray1.png" alt="foto do Lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_grande_gray2.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_grande_gray2.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_grande_gray2.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_grande_gray2.png" alt="foto do grupo" class="celular">
+
+        <h3>Fotos na Filmadora Panasonic (escala de cinza redimensionado)</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_grande_gray2.png" alt="foto do Lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_grande_gray3.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_grande_gray3.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_grande_gray3.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_grande_gray3.png" alt="foto do grupo" class="celular">
+
+        <h3>Composições (escala de cinza)</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_avatar_gray2.png" alt="foto do lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_avatar_gray3.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_avatar_gray3.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_avatar_gray3.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_avatar_gray3.png" alt="foto do grupo" class="celular">
+
+        <h3>Composições (escala de cinza redimensionado)</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_avatar_gray2.png" alt="foto do lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_avatar_gray3.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_avatar_gray3.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_avatar_gray3.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_avatar_gray3.png" alt="foto do grupo" class="celular">
+
+        <h3>Comentários e conclusões</h3>
+        <p class="resumo">Neste laboratório realizamos uma introdução ao tratamento de imagens com opencv e obtivemos algumas noções sobre como gravar e obter fotografias, 
+            como na preparação, com o storyboard e a importância da luminosidade (que será melhor abordado no próximo laboratório), como na prática, com o manuseio das câmeras.
+        </p>
+        <p class="resumo"></p>
     </main>
 
     <footer>
