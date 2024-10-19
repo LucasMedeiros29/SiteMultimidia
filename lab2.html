@@ -20,6 +20,11 @@
     </header>
 
     <main>
+        <audio controls class="audio">
+            <source src="assets/audio/lab2.waptt.opus" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: Controlador de áudio com as informações da página inicial</p>
         <h3>Objetivos</h3>
         <ul>
             <li>Preparar fotos para os próximos laboratórios, com dispositivos diversos;</li>
@@ -44,25 +49,25 @@
             conforme os códigos descritos abaixo.
         </p>
 
-        <img src="assets/img/fotos lab 2/cod1.png" alt="código 1">
+        <img src="assets/img/fotos lab 2/cod1.png" alt="código 1" class="storyboard">
         <p>import cv2 as cv #importa a biblioteca do opencv como cv</p>
         <p>import numpy as np #importa a biblioteca do numpy</p>
         <p>import matplotlib.pyplot as plt #importa a biblioteca matplotlib</p>
 
         
         <p class="resumo"></p>
-        <img src="assets/img/fotos lab 2/cod2.png" alt="código 1">
+        <img src="assets/img/fotos lab 2/cod2.png" alt="código 1" class="storyboard">
         <p>img_gray = cv.imread(os.path.join(image_path,'grupo_avatar.jpg'), cv.IMREAD_GRAYSCALE) #lê a imagem e converte para a escala de cinza</p>
         <p>plt.imshow(img_gray,'gray') #exibe a imagem</p>
         <p>plt.show()</p>
 
         <p class="resumo"></p>
-        <img src="assets/img/fotos lab 2/cod3.png" alt="código 1">
+        <img src="assets/img/fotos lab 2/cod3.png" alt="código 1" class="storyboard">
         <p>from google.colab.patches import cv2_imshow # versão do Colab para o comando acima</p>
         <p>cv2_imshow(img_gray)</p>
 
         <p class="resumo"></p>
-        <img src="assets/img/fotos lab 2/cod4.png" alt="código 1">
+        <img src="assets/img/fotos lab 2/cod4.png" alt="código 1" class="storyboard">
         <p>print(img_gray.shape) #exibe a dimensão da imagem</p>
         <p>img2 = cv.resize(img_gray, None, fx=1.25, fy=1.25, interpolation = cv.INTER_CUBIC) #realiza o dimensionamento da imagem</p>
         <p>print(img2.shape)</p>
@@ -101,6 +106,8 @@
         <img src="assets/img/fotos lab 2/composição/grupo_avatar.jpg" alt="foto do grupo (composta)" class="handcam">
 
         <h3>Storyboard</h3>
+        <img src="assets/img/fotos lab 2/storyboard.png" alt="Storyboard" class="storyboard">
+        <p>Alt: Storyboard do vídeo</p>
 
         <h3>Vídeo final</h3>
         <div class="video-container">
@@ -169,7 +176,7 @@
 
         <h3>Comentários e conclusões</h3>
         <p class="resumo">Neste laboratório realizamos uma introdução ao tratamento de imagens com opencv e obtivemos algumas noções sobre como gravar e obter fotografias, 
-            como na preparação, com o storyboard e a importância da luminosidade (que será melhor abordado no próximo laboratório), como na prática, com o manuseio das câmeras.
+            tanto na preparação, com o storyboard e a importância da luminosidade (que será melhor abordado no próximo laboratório), como na prática, com o manuseio das câmeras.
         </p>
         <p class="resumo"></p>
     </main>
