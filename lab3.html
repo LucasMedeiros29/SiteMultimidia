@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Laboratório 3</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img class="ufabc" src="assets/img/ufabc.png" alt="ufabc logo"></a>
+        <h1>Codificação de Imagem por DCT</h1>
+        <h2>Laboratório 3</h2>
+    </header>
+
+    <main>
+        <audio controls class="audio">
+            <source src="" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: Controlador de áudio com as informações da página inicial</p>
+        <h3>Objetivos</h3>
+        <ul>
+            <li>Utilizar o Google Colab e o OpenCV, para processar as imagens e vídeos com a DCT.</li>
+        </ul>
+        <h3>Materiais</h3>
+        <ul>
+            <li>Google Colab</li>
+            <li>OpenCV</li>
+        </ul>
+        <h3>Metodologia</h3>
+        <p class="resumo">Neste laboratório, tratamos na prática sobre os modelos de cores, compressão das imagens com perdas e compressão utilizando a DCT.</p>
+
+        <img src="assets/img/fotos lab 2/cod1.png" alt="código 1" class="storyboard">
+        
+        <p class="resumo"></p>
+        <img src="assets/img/fotos lab 2/cod2.png" alt="código 1" class="storyboard">
+
+
+        <p class="resumo"></p>
+        <img src="assets/img/fotos lab 2/cod3.png" alt="código 1" class="storyboard">
+
+
+        <p class="resumo"></p>
+        <img src="assets/img/fotos lab 2/cod4.png" alt="código 1" class="storyboard">
+
+        <p class="resumo"></p>
+        <p><a href="assets/download/Lab3_Cod_Imagem_DCT.ipynb" download="Lab3_Cod_Imagem_DCT.ipynb">Clique aqui para baixar o arquivo do código utilizado</a></p>
+        
+
+        <h3>Fotos originais</h3>
+        <img src="assets/img/fotos lab 2/celular/lucas_cel.jpg" alt="foto do Lucas (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunok_cel.jpg" alt="foto do BrunoK (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunon_cel.jpg" alt="foto do BrunoN (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/gabriel_cel.jpg" alt="foto do Gabriel (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/grupo_cel.jpg" alt="foto do grupo (celular)" class="handcam">
+
+        <h3>Fotos originais (composições)</h3>
+        <img src="assets/img/fotos lab 2/composição/lucas_avatar.jpg" alt="foto do Lucas (composta)" class="handcam">
+        <img src="assets/img/fotos lab 2/composição/brunok_avatar.jpg" alt="foto do BrunoK (composta)" class="handcam">
+        <img src="assets/img/fotos lab 2/composição/brunon_avatar.jpg" alt="foto do BrunoN (composta)" class="handcam">
+        <img src="assets/img/fotos lab 2/composição/gabriel_avatar.jpg" alt="foto do Gabriel (composta)" class="handcam">
+        <img src="assets/img/fotos lab 2/composição/grupo_avatar.jpg" alt="foto do grupo (composta)" class="handcam">
+
+        <h3></h3>
+        <h2>Processamento (Espaços de Cores)</h2>
+
+        <h3>Cores trocadas (BGR) e reais (RGB)</h3>
+        <img src="assets/img/fotos lab 2/celular/lucas_cel.jpg" alt="foto do Lucas (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunok_cel.jpg" alt="foto do BrunoK (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunon_cel.jpg" alt="foto do BrunoN (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/gabriel_cel.jpg" alt="foto do Gabriel (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/grupo_cel.jpg" alt="foto do grupo (celular)" class="handcam">
+
+        <h3>Converte para os formatos YCrCb e HSV</h3>
+        <img src="assets/img/fotos lab 2/celular/lucas_cel.jpg" alt="foto do Lucas (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunok_cel.jpg" alt="foto do BrunoK (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunon_cel.jpg" alt="foto do BrunoN (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/gabriel_cel.jpg" alt="foto do Gabriel (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/grupo_cel.jpg" alt="foto do grupo (celular)" class="handcam">
+
+        <h3>Separação das Camadas RGB individualmente</h3>
+        <img src="assets/img/fotos lab 2/celular/lucas_cel.jpg" alt="foto do Lucas (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunok_cel.jpg" alt="foto do BrunoK (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunon_cel.jpg" alt="foto do BrunoN (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/gabriel_cel.jpg" alt="foto do Gabriel (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/grupo_cel.jpg" alt="foto do grupo (celular)" class="handcam">
+
+        <h3>Separação dos Canais YCbCr</h3>
+        <img src="assets/img/fotos lab 2/celular/lucas_cel.jpg" alt="foto do Lucas (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunok_cel.jpg" alt="foto do BrunoK (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/brunon_cel.jpg" alt="foto do BrunoN (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/gabriel_cel.jpg" alt="foto do Gabriel (celular)" class="celular">
+        <img src="assets/img/fotos lab 2/celular/grupo_cel.jpg" alt="foto do grupo (celular)" class="handcam">
+
+        <h3></h3>
+        <h2>Processamento (Compressão de imagens com perdas)</h2>
+
+        <h3>Fotos pessoais comprimidas</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_peq_gray2.png" alt="foto do Lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_peq_gray2.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_peq_gray2.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_peq_gray.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_peq_gray2.png" alt="foto do grupo" class="celular">
+
+        <h3>Fotos com avatares comprimidas</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_peq_gray3.png" alt="foto do Lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_peq_gray3.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_peq_gray3.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_peq_gray3.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_peq_gray3.png" alt="foto do grupo" class="celular">
+
+        <h3>Tabela comparando os tamanhos originais e os comprimidos</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_grande_gray1.png" alt="foto do Lucas" class="celular">
+
+        <h3></h3>
+        <h2>Processamento (DCT)</h2>
+
+        <h3>Recorte</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_grande_gray2.png" alt="foto do Lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_grande_gray3.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_grande_gray3.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_grande_gray3.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_grande_gray3.png" alt="foto do grupo" class="celular">
+
+        <h3>Recorte reconstruído com DCT</h3>
+        <img src="assets/img/fotos lab 2/edit/lucas_avatar_gray2.png" alt="foto do lucas" class="celular">
+        <img src="assets/img/fotos lab 2/edit/gabriel_avatar_gray3.png" alt="foto do Gabriel" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunok_avatar_gray3.png" alt="foto do BrunoK" class="celular">
+        <img src="assets/img/fotos lab 2/edit/brunon_avatar_gray3.png" alt="foto do BrunoN" class="celular">
+        <img src="assets/img/fotos lab 2/edit/grupo_avatar_gray3.png" alt="foto do grupo" class="celular">
+
+        <h3>Comentários e conclusões</h3>
+        <p class="resumo">Questão 0: As cores da camisa do Barcelona estão certas?</p>
+        <p class="resumo">Não, as cores estão invertidas, (B e R alterados, invertidos).</p>
+        <h2></h2>
+
+        <p class="resumo">Questão 1: O que foi feito aqui?</p>
+        <p class="resumo">Reversão das cores, já que o opencv lê em bgr</p>
+        <h2></h2>
+
+        <p class="resumo">Questão 2: Alguma opinião sobre estas representações? O que é o HSV?</p>
+        <p class="resumo">Cada modelo de cor tem uma finalidade diferente. HSV é uma formatação de cores, majoritariamente utilizada para edição de imagens, distinguindo Matiz, saturação e Valor para representar cores de forma que seja mais intuitiva para humanos.</p>
+        <h2></h2>
+
+        <p class="resumo">Questão 3: O que foi feito aqui?</p>
+        <p class="resumo">As cores primárias que compõe o modelo RGB foram separadas em diferentes imagens.</p>
+        <h2></h2>
+
+        <p class="resumo">Questão 4: O que percebe nestas representações?</p>
+        <p class="resumo">Essas imagens separam as componentes do modelo Ycrcb, sendo elas a luminância (segunda), que tem foco no formato e profundidade da imagem, Cromância vermelha, que é a diferença entre a intensidade do vermelho e a intensidade da luminância, e crominância azul, que é a diferença entre a intensidade do azul e a intensidade da luminância.</p>
+        <h2></h2>
+
+        <p class="resumo">Questão 5: Analise e comente os artefatos em cada caso</p>
+        <p class="resumo">Quanto menor o fator de conversão utilizado na função cv.IMWRITE_JPEG_QUALITY, menor a fidelidade/definição da imagem convertida com a imagem original, sendo no máximo 1</p>
+        <h2></h2>
+
+        <p class="resumo">Questão 6: Comente</p>
+        <p class="resumo">O código recorta uma área da imagem nas coordenadas definidas na variável "bola", acha seu centro através de "cx" e "cy" e calcula a DCT da área 8x8 </p>
+        <h2></h2>
+
+        <p class="resumo">Questão 7: Compare e comente</p>
+        <p class="resumo">A imagem reconstruída fica menos definida que a original em função da compressão pela DCT, embora essa perda de definição não seja tão perceptível.</p>
+        <h2></h2>
+
+    </main>
+
+    <footer>
+        <p>Página confeccionada para a disciplina de Codificação de Sinais Multimidia 2024.3</p>
+        <p>Professor: Mário Minami</p>
+    </footer>
+</body>
+
+</html>
