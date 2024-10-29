@@ -96,22 +96,31 @@
         <p class="texto_dct">A DCT 2D pode ser computada aplicando a DCT 1D em linhas e colunas separadamente, facilitando a computação.</p>
 
 
-        <h3>Etapas da DCT</h3>
+        <h3>Etapas da DCT (exemplo para formato JPEG)</h3>
         <p class="texto_dct_bold">Divisão da imagem em blocos (geralmente 8x8)</p>
         <p class="texto_dct">Cada pixel possui um valor entre 0 e 256.</p>
         <img src="assets/img/dct/image5.png" alt="foto do Lucas (celular)" class="equacao">
-        <p>Alt: Imagem com elementos de baixa frequência (esquerda) e de alta frequência (direita)</p>
+        <p>Alt: Imagem de bloco 8x8 pixels</p>
 
         <p class="texto_dct_bold">Subtração do valor de cada pixel por 128</p>
         <p class="texto_dct">O range se tornará algo entre -128 e 127, onde o primeiro é o preto e o segundo, o branco.</p>
         <img src="assets/img/dct/image4.png" alt="foto do Lucas (celular)" class="equacao">
-        <p>Alt: Imagem com elementos de baixa frequência (esquerda) e de alta frequência (direita)</p>
+        <p>Alt: Subtração dos pixels por 128</p>
 
         <p class="texto_dct_bold">Utilização da imagem padrão</p>
         <p class="texto_dct">Qualquer imagem pode ser formada utilizando a combinação dessas 64 imagens base. Os 64 pixels 
             da imagem original são transformados em 64 valores que representam o quanto de cada imagem base foi utilizada.</p>
+        <p class="texto_dct">A DCT não comprime, mas facilita identificar quais partes podem ser mantidas com mais precisão e quais podem ser reduzidas sem comprometer a qualidade da imagem de maneira perceptível.</p>
         <img src="assets/img/dct/image6.png" alt="foto do Lucas (celular)" class="equacao">
-        <p>Alt: Imagem com as 64 imangens padrão</p>
+        <p>Alt: Imagem com as 64 imagens padrão</p>
+
+        <p class="texto_dct"></p>
+        <img src="assets/img/dct/equacao3.png" alt="foto do Lucas (celular)" class="equacao">
+        <p>Alt: equação representada pela imagem acima</p>
+        <p class="texto_dct">onde:</p>
+        <p class="texto_dct">f(x,y) representa o valor de pixel na posição (x,y).</p>
+        <p class="texto_dct">F(u,v) é o coeficiente DCT resultante para a frequência (u,v).</p>
+        <p class="texto_dct">α(u) e α(v) são fatores de normalização.</p>
 
         <!--<h3>Relação com a Transformada de Karhunen-Loève (KLT)</h3>
         <p class="texto_dct">A DCT é uma aproximação da KLT para sinais que têm correlação similar.</p>
