@@ -124,3 +124,25 @@ a {
 	max-width: 50vw;
 	text-align: center;
 }
+
+/* DCT */
+
+.equacao{
+	max-width: 75vw;
+	text-align: center;
+}
+
+.texto_dct{
+	font-size: 1.25em;
+	margin: 2em 15vw 1em 15vw;
+	text-align: center;
+
+	line-height: 2em;
+}
+.texto_dct_bold{
+	font-size: 1.50em;
+	margin: 2em 15vw 1em 15vw;
+	text-align: center;
+
+	line-height: 2em;
+}
