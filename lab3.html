@@ -36,7 +36,7 @@
         </ul>
         <h3>Metodologia</h3>
         <p class="resumo">Neste laboratório, tratamos na prática sobre os modelos de cores, compressão das imagens com perdas e compressão utilizando a DCT e as fotos tiradas 
-            com o celular no laboratório anterior, já que possuem maior definição.Os códigos utilizados podem ser encontrados abaixo junto das explicações.
+            com o celular no laboratório anterior, já que possuem maior definição. Os códigos utilizados podem ser encontrados abaixo junto das explicações.
         </p>
 
         <p class="resumo"></p>
@@ -44,80 +44,109 @@
         
 
         <h3>Fotos originais</h3>
-        <img src="assets/img/fotos lab 2/celular/lucas_cel.jpg" alt="foto do Lucas (celular)" class="celular">
-        <img src="assets/img/fotos lab 2/celular/brunok_cel.jpg" alt="foto do BrunoK (celular)" class="celular">
-        <img src="assets/img/fotos lab 2/celular/brunon_cel.jpg" alt="foto do BrunoN (celular)" class="celular">
-        <img src="assets/img/fotos lab 2/celular/gabriel_cel.jpg" alt="foto do Gabriel (celular)" class="celular">
-        <img src="assets/img/fotos lab 2/celular/grupo_cel.jpg" alt="foto do grupo (celular)" class="handcam">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 2/celular/lucas_cel.jpg" alt="foto do Lucas (celular)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 2/celular/brunok_cel.jpg" alt="foto do BrunoK (celular)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 2/celular/brunon_cel.jpg" alt="foto do BrunoN (celular)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 2/celular/gabriel_cel.jpg" alt="foto do Gabriel (celular)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 2/celular/grupo_cel.jpg" alt="foto do grupo (celular)" onclick="expandImage(this)">
+    </div>
+    <div id="popup" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img class="popup-content" id="expandedImage">
+        <div id="caption"></div>
+    </div>
 
         <h3>Fotos originais (composições)</h3>
-        <img src="assets/img/fotos lab 2/composição/lucas_avatar.jpg" alt="foto do Lucas (composta)" class="handcam">
-        <img src="assets/img/fotos lab 2/composição/brunok_avatar.jpg" alt="foto do BrunoK (composta)" class="handcam">
-        <img src="assets/img/fotos lab 2/composição/brunon_avatar.jpg" alt="foto do BrunoN (composta)" class="handcam">
-        <img src="assets/img/fotos lab 2/composição/gabriel_avatar.jpg" alt="foto do Gabriel (composta)" class="handcam">
-        <img src="assets/img/fotos lab 2/composição/grupo_avatar.jpg" alt="foto do grupo (composta)" class="handcam">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 2/composição/lucas_avatar.jpg" alt="foto do Lucas (composta)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 2/composição/brunok_avatar.jpg" alt="foto do BrunoK (composta)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 2/composição/brunon_avatar.jpg" alt="foto do BrunoN (composta)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 2/composição/gabriel_avatar.jpg" alt="foto do Gabriel (composta)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 2/composição/grupo_avatar.jpg" alt="foto do grupo (composta)" onclick="expandImage(this)">
+    </div>
 
         <h3></h3>
         <h2>Processamento (Espaços de Cores)</h2>
 
         <h3>Cores trocadas (BGR) e reais (RGB)</h3>
-        <img src="assets/img/fotos lab 3/Processados/lucas_BGR_RGB.png" alt="foto do Lucas" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunok_BGR_RGB.png" alt="foto do BrunoK" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunon_BGR_RGB.png" alt="foto do BrunoN" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/gabriel_BGR_RGB.png" alt="foto do Gabriel" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/grupo_BGR_RGB.png" alt="foto do grupo" class="handcam">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 3/Processados/lucas_BGR_RGB.png" alt="foto do Lucas (Cores trocadas (BGR) e reais (RGB))" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunok_BGR_RGB.png" alt="foto do BrunoK (Cores trocadas (BGR) e reais (RGB))" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunon_BGR_RGB.png" alt="foto do BrunoN (Cores trocadas (BGR) e reais (RGB))" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/gabriel_BGR_RGB.png" alt="foto do Gabriel (Cores trocadas (BGR) e reais (RGB))" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/grupo_BGR_RGB.png" alt="foto do grupo (Cores trocadas (BGR) e reais (RGB))" onclick="expandImage(this)">
+    </div>
 
         <h3>Converte para os formatos YCrCb e HSV</h3>
-        <img src="assets/img/fotos lab 3/Processados/lucas_RGB_YCrCb_HSV.png" alt="foto do Lucas" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunok_RGB_YCrCb_HSV.png" alt="foto do BrunoK" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunon_RGB_YCrCb_HSV.png" alt="foto do BrunoN" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/gabriel_RGB_YCrCb_HSV.png" alt="foto do Gabriel" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/grupo_RGB_YCrCb_HSV.png" alt="foto do grupo" class="handcam">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 3/Processados/lucas_RGB_YCrCb_HSV.png" alt="foto do Lucas (formatos YCrCb e HSV)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunok_RGB_YCrCb_HSV.png" alt="foto do BrunoK (formatos YCrCb e HSV)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunon_RGB_YCrCb_HSV.png" alt="foto do BrunoN (formatos YCrCb e HSV)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/gabriel_RGB_YCrCb_HSV.png" alt="foto do Gabriel (formatos YCrCb e HSV)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/grupo_RGB_YCrCb_HSV.png" alt="foto do grupo (formatos YCrCb e HSV)" onclick="expandImage(this)">
+    </div>
 
         <h3>Separação das Camadas RGB individualmente</h3>
-        <img src="assets/img/fotos lab 3/Processados/lucas_R_G_B.png" alt="foto do Lucas" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunok_R_G_B.png" alt="foto do BrunoK" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunon_R_G_B.png" alt="foto do BrunoN" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/gabriel_R_G_B.png" alt="foto do Gabriel" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/grupo_R_G_B.png" alt="foto do grupo" class="handcam">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 3/Processados/lucas_R_G_B.png" alt="foto do Lucas (Separação das Camadas RGB individualmente)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunok_R_G_B.png" alt="foto do BrunoK (Separação das Camadas RGB individualmente)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunon_R_G_B.png" alt="foto do BrunoN (Separação das Camadas RGB individualmente)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/gabriel_R_G_B.png" alt="foto do Gabriel (Separação das Camadas RGB individualmente)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/grupo_R_G_B.png" alt="foto do grupo (Separação das Camadas RGB individualmente)" onclick="expandImage(this)">
+    </div>
 
         <h3>Separação dos Canais YCbCr</h3>
-        <img src="assets/img/fotos lab 3/Processados/lucas_Y_Cr_Cb.png" alt="foto do Lucas" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunok_Y_Cr_Cb.png" alt="foto do BrunoK" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunon_Y_Cr_Cb.png" alt="foto do BrunoN" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/gabriel_Y_Cr_Cb.png" alt="foto do Gabriel" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/grupo_Y_Cr_Cb.png" alt="foto do grupo" class="handcam">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 3/Processados/lucas_Y_Cr_Cb.png" alt="foto do Lucas (Separação dos Canais YCbCr)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunok_Y_Cr_Cb.png" alt="foto do BrunoK (Separação dos Canais YCbCr)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunon_Y_Cr_Cb.png" alt="foto do BrunoN (Separação dos Canais YCbCr)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/gabriel_Y_Cr_Cb.png" alt="foto do Gabriel (Separação dos Canais YCbCr)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/grupo_Y_Cr_Cb.png" alt="foto do grupo (Separação dos Canais YCbCr)" onclick="expandImage(this)">
+    </div>
 
         <h3></h3>
         <h2>Processamento (Compressão de imagens com perdas)</h2>
 
         <h3>Fotos pessoais comprimidas</h3>
-        <img src="assets/img/fotos lab 3/Processados/lucas_JPEG.png" alt="foto do Lucas" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunok_JPEG.png" alt="foto do BrunoK" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunon_JPEG.png" alt="foto do BrunoN" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/gabriel_JPEG.png" alt="foto do Gabriel" class="handcam">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 3/Processados/lucas_JPEG.png" alt="foto do Lucas (comprimido)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunok_JPEG.png" alt="foto do BrunoK (comprimido)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunon_JPEG.png" alt="foto do BrunoN (comprimido)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/gabriel_JPEG.png" alt="foto do Gabriel (comprimido)" onclick="expandImage(this)">
+    </div>
 
         <h3>Fotos com avatares comprimidas</h3>
-        <img src="assets/img/fotos lab 3/Processados/lucas_avatar_JPEG.png" alt="foto do Lucas" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunok_avatar_JPEG.png" alt="foto do BrunoK" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/brunon_avatar_JPEG.png" alt="foto do BrunoN" class="handcam">
-        <img src="assets/img/fotos lab 3/Processados/gabriel_avatar_JPEG.png" alt="foto do Gabriel" class="handcam">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 3/Processados/lucas_avatar_JPEG.png" alt="composição do Lucas (comprimido)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunok_avatar_JPEG.png" alt="composição do BrunoK (comprimido)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/brunon_avatar_JPEG.png" alt="composição do BrunoN (comprimido)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/Processados/gabriel_avatar_JPEG.png" alt="composição do Gabriel (comprimido)" onclick="expandImage(this)">
+</div>
 
         <h3>Tabela comparando os tamanhos originais e os comprimidos</h3>
-        <img src="assets/img/fotos lab 3/tabela_bytes.png" alt="tabela porcentagem" class="equacao">
-        <img src="assets/img/fotos lab 3/tabela_pct.png" alt="tabela em bytes" class="equacao">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 3/tabela_bytes.png" alt="tabela porcentagem" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 3/tabela_pct.png" alt="tabela em bytes" onclick="expandImage(this)">
+    </div>
 
         <h3></h3>
         <h2>Processamento (DCT)</h2>
 
         <h3>Recorte da Bola</h3>
-        <img src="assets/img/fotos lab 3/DCT/bola_DCT.png" alt="foto do Lucas" class="handcam">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 3/DCT/bola_DCT.png" alt="recorte da bola" onclick="expandImage(this)">
+</div>
 
         <h3>Recorte pessoal (imagem do Bruno)</h3>
-        <img src="assets/img/fotos lab 3/DCT/brunon_reconstruida.png" alt="foto do lucas" class="handcam">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 3/DCT/brunon_reconstruida.png" alt="Recorte pessoal (imagem do Bruno)" onclick="expandImage(this)">
+    </div>
 
         <h3>Recorte pessoal (imagem do Bruno) com duas diagonais superiores a mais</h3>
-        <img src="assets/img/fotos lab 3/DCT/brunon_reconstruida_duas_diag.png" alt="foto do lucas" class="handcam">
+        <div class="gallery">
+        <img src="assets/img/fotos lab 3/DCT/brunon_reconstruida_duas_diag.png" alt="Recorte pessoal (imagem do Bruno) com duas diagonais superiores a mais" onclick="expandImage(this)">
+</div>
 
         <h3>Comentários e conclusões (questões presentes no documento para download)</h3>
         <p class="resumo">Questão 0: As cores da camisa do Barcelona estão certas?</p>
@@ -151,13 +180,14 @@
         <p class="resumo">Questão 7: Compare e comente</p>
         <p class="resumo">A imagem reconstruída fica menos definida que a original em função da compressão pela DCT, embora essa perda de definição não seja tão perceptível.</p>
         <h2></h2>
-
+        
     </main>
 
     <footer>
         <p>Página confeccionada para a disciplina de Codificação de Sinais Multimidia 2024.3</p>
         <p>Professor: Mário Minami</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

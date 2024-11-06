@@ -15,7 +15,7 @@
 <body>
     <header>
         <a href="index.html"><img class="ufabc" src="assets/img/ufabc.png" alt="ufabc logo"></a>
-        <h1>Codificação de Imagem por DCT</h1>
+        <h1>Codificação de Imagem por DWT</h1>
         <h2>Laboratório 4</h2>
     </header>
 
@@ -34,36 +34,155 @@
         <ul>
             <li>Google Colab</li>
             <li>OpenCV</li>
+            <li>Fotos retiradas do laboratório 2</li>
+            <li>Krita</li>
+            <li>Blender</li>
         </ul>
         <h3>Metodologia</h3>
-        <p class="resumo">Neste laboratório, tratamos na prática sobre os modelos de cores, compressão das imagens com perdas e compressão utilizando a DCT e as fotos tiradas 
-            com o celular no laboratório anterior, já que possuem maior definição.Os códigos utilizados podem ser encontrados abaixo junto das explicações.
+        <p class="resumo">Neste laboratório, observamos na prática a decodificação e codificação de imagens a DWT e a IDWT utilizando as fotos tiradas com o celular no laboratório 2, 
+            já que possuem maior definição. Também realizamos a composição das imagens de cada integrante e dos avatares utilizando o programa Krita. Os códigos utilizados podem ser encontrados abaixo junto das explicações.
         </p>
+        <p class="resumo">Para a etapa B do laboratório, que consiste em criar um vídeo de animação utilizando o programa Blender, criamos um curta com os nomes dos participantes e dos seus respectivos avatares utilizando conceitos aprendidos em aula. </p>
 
         <p class="resumo"></p>
         <p><a href="assets/download/Lab4_ImageDWT_v2.ipynb" download="Lab4_ImageDWT_v2.ipynb">Clique aqui para baixar o arquivo do código utilizado</a></p>
         
         <h3>Fotos originais</h3>
-        <img src="assets/img/fotos lab 2/celular/lucas_cel.jpg" alt="foto do Lucas (celular)" class="celular">
-        <img src="assets/img/fotos lab 2/celular/brunok_cel.jpg" alt="foto do BrunoK (celular)" class="celular">
-        <img src="assets/img/fotos lab 2/celular/brunon_cel.jpg" alt="foto do BrunoN (celular)" class="celular">
-        <img src="assets/img/fotos lab 2/celular/gabriel_cel.jpg" alt="foto do Gabriel (celular)" class="celular">
-        <img src="assets/img/fotos lab 2/celular/grupo_cel.jpg" alt="foto do grupo (celular)" class="handcam">
+        <div class="gallery">
+            <img src="assets/img/fotos lab 2/celular/lucas_cel.jpg" alt="foto do Lucas (celular)" onclick="expandImage(this)">
+            <img src="assets/img/fotos lab 2/celular/brunok_cel.jpg" alt="foto do BrunoK (celular)" onclick="expandImage(this)">
+            <img src="assets/img/fotos lab 2/celular/brunon_cel.jpg" alt="foto do BrunoN (celular)" onclick="expandImage(this)">
+            <img src="assets/img/fotos lab 2/celular/gabriel_cel.jpg" alt="foto do Gabriel (celular)" onclick="expandImage(this)">
+        </div>
+        <div id="popup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img class="popup-content" id="expandedImage">
+            <div id="caption"></div>
+        </div>
 
-        <h3>Fotos originais (composições)</h3>
-        <img src="assets/img/fotos lab 2/composição/lucas_avatar.jpg" alt="foto do Lucas (composta)" class="handcam">
-        <img src="assets/img/fotos lab 2/composição/brunok_avatar.jpg" alt="foto do BrunoK (composta)" class="handcam">
-        <img src="assets/img/fotos lab 2/composição/brunon_avatar.jpg" alt="foto do BrunoN (composta)" class="handcam">
-        <img src="assets/img/fotos lab 2/composição/gabriel_avatar.jpg" alt="foto do Gabriel (composta)" class="handcam">
-        <img src="assets/img/fotos lab 2/composição/grupo_avatar.jpg" alt="foto do grupo (composta)" class="handcam">
+        <h3>Composição do ladrilho</h3>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 4/ladrilho/ladrilho.jpg" alt="composição do ladrilho" onclick="expandImage(this)">
+    </div>
 
 
+        <h3></h3>
+        <h2>Processamento</h2>
+
+        <h3>Codificação de Luminância (P&B) com DWT</h3>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 4/lucas/lucas_cel_lab4_itemC.png" alt="foto do Lucas (Codificação de Luminância (P&B) com DWT)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunok/brunok_cel_lab4_itemC.png" alt="foto do brunok (Codificação de Luminância (P&B) com DWT)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunon/brunon_cel_lab4_itemC.png" alt="foto do brunon (Codificação de Luminância (P&B) com DWT)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/gabriel/gabriel_cel_lab4_itemC.png" alt="foto do gabriel (Codificação de Luminância (P&B) com DWT)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/ladrilho/ladrilho_lab4_itemC.png" alt="foto do grupo (Codificação de Luminância (P&B) com DWT)" onclick="expandImage(this)">
+    </div>
+
+        <h3>Cálculo do Erro Quadrático Médio (MSE) e da Relação Sinal Ruído de Pico (PSNR)</h3>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 4/lucas/lucas_cel_lab4_itemC1.png" alt="foto do Lucas (Erro Quadrático Médio (MSE) e da Relação Sinal Ruído de Pico (PSNR))" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunok/brunok_cel_lab4_itemC1.png" alt="foto do brunok (Erro Quadrático Médio (MSE) e da Relação Sinal Ruído de Pico (PSNR))" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunon/brunon_cel_lab4_itemC1.png" alt="foto do brunon (Erro Quadrático Médio (MSE) e da Relação Sinal Ruído de Pico (PSNR))" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/gabriel/gabriel_cel_lab4_itemC1.png" alt="foto do gabriel (Erro Quadrático Médio (MSE) e da Relação Sinal Ruído de Pico (PSNR))" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/ladrilho/ladrilho_lab4_itemC1.png" alt="foto do grupo (Erro Quadrático Médio (MSE) e da Relação Sinal Ruído de Pico (PSNR))" onclick="expandImage(this)">
+    </div>
+
+        <h3>Teste das Funções de Multiresolução wavedec2() e waverec2() (coeficientes do nível 2)</h3>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 4/lucas/lucas_cel_lab4_itemD_img1.png" alt="foto do Lucas (coeficientes do nível 2)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunok/brunok_cel_lab4_itemD_img1.png" alt="foto do brunok (coeficientes do nível 2)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunon/brunon_cel_lab4_itemD_img1.png" alt="foto do brunon (coeficientes do nível 2)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/gabriel/gabriel_cel_lab4_itemD_img1.png" alt="foto do gabriel (coeficientes do nível 2)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/ladrilho/ladrilho_lab4_itemD_img1.png" alt="foto do grupo (coeficientes do nível 2)" onclick="expandImage(this)">
+    </div>
+
+        <h3>Teste das Funções de Multiresolução wavedec2() e waverec2() (imagens finais)</h3>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 4/lucas/lucas_cel_lab4_itemD_img2.png" alt="foto do Lucas (imagens finais)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunok/brunok_cel_lab4_itemD_img2.png" alt="foto do brunok (imagens finais)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunon/brunon_cel_lab4_itemD_img2.png" alt="foto do brunon (imagens finais)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/gabriel/gabriel_cel_lab4_itemD_img2.png" alt="foto do gabriel (imagens finais)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/ladrilho/ladrilho_lab4_itemD_img2.png" alt="foto do grupo (imagens finais)" onclick="expandImage(this)">
+    </div>
+
+        <h3>Codificação de Imagem em multinível com função wavedec2()</h3>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 4/lucas/lucas_cel_lab4_itemE.png" alt="foto do Lucas (Codificação de Imagem em multinível com função wavedec2())" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunok/brunok_cel_lab4_itemE.png" alt="foto do brunok (Codificação de Imagem em multinível com função wavedec2())" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunon/brunon_cel_lab4_itemE.png" alt="foto do brunon (Codificação de Imagem em multinível com função wavedec2())" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/gabriel/gabriel_cel_lab4_itemE.png" alt="foto do gabriel (Codificação de Imagem em multinível com função wavedec2())" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/ladrilho/ladrilho_lab4_itemE.png" alt="foto do grupo (Codificação de Imagem em multinível com função wavedec2())" onclick="expandImage(this)">
+    </div>
+        <h3></h3>
+
+        <h2>Reconstrução de Imagem Colorida</h2>
+        <h3>Plano Vermelho</h3>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 4/lucas/lucas_cel_lab4_itemF_red.png" alt="foto do Lucas (Plano Vermelho)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunok/brunok_cel_lab4_itemF_red.png" alt="foto do brunok (Plano Vermelho)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunon/brunon_cel_lab4_itemF_red.png" alt="foto do brunon (Plano Vermelho)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/gabriel/gabriel_cel_lab4_itemF_red.png" alt="foto do gabriel (Plano Vermelho)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/ladrilho/ladrilho_lab4_itemF_red.png" alt="foto do grupo (Plano Vermelho)" onclick="expandImage(this)">
+    </div>
+
+        <h3>Plano Verde</h3>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 4/lucas/lucas_cel_lab4_itemF_green.png" alt="foto do Lucas (Plano Verde)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunok/brunok_cel_lab4_itemF_green.png" alt="foto do brunok (Plano Verde)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunon/brunon_cel_lab4_itemF_green.png" alt="foto do brunon (Plano Verde)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/gabriel/gabriel_cel_lab4_itemF_green.png" alt="foto do gabriel (Plano Verde)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/ladrilho/ladrilho_lab4_itemF_green.png" alt="foto do grupo (Plano Verde)" onclick="expandImage(this)">
+    </div>
+
+        <h3>Plano Azul</h3>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 4/lucas/lucas_cel_lab4_itemF_blue.png" alt="foto do Lucas (Plano Azul)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunok/brunok_cel_lab4_itemF_blue.png" alt="foto do brunok (Plano Azul)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunon/brunon_cel_lab4_itemF_blue.png" alt="foto do brunon (Plano Azul)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/gabriel/gabriel_cel_lab4_itemF_blue.png" alt="foto do gabriel (Plano Azul)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/ladrilho/ladrilho_lab4_itemF_blue.png" alt="foto do grupo (Plano Azul)" onclick="expandImage(this)">
+    </div>
+
+        <h3>Reconstrução</h3>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 4/lucas/lucas_cel_lab4_itemF_RGB.png" alt="foto do Lucas (Reconstrução)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunok/brunok_cel_lab4_itemF_RGB.png" alt="foto do brunok (Reconstrução)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunon/brunon_cel_lab4_itemF_RGB.png" alt="foto do brunon (Reconstrução)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/gabriel/gabriel_cel_lab4_itemF_RGB.png" alt="foto do gabriel (Reconstrução)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/ladrilho/ladrilho_lab4_itemF_RGB.png" alt="foto do grupo (Reconstrução)" onclick="expandImage(this)">
+    </div>
+
+        <h3>Reconstrução da Imagem colorida e Cálculo da MSE de cada plano de cor e da PSNR total</h3>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 4/lucas/lucas_cel_lab4_itemI.png" alt="foto do Lucas (Reconstrução da Imagem colorida e Cálculo da MSE de cada plano de cor e da PSNR total)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunok/brunok_cel_lab4_itemi.png" alt="foto do brunok (Reconstrução da Imagem colorida e Cálculo da MSE de cada plano de cor e da PSNR total)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/brunon/brunon_cel_lab4_itemI.png" alt="foto do brunon (Reconstrução da Imagem colorida e Cálculo da MSE de cada plano de cor e da PSNR total)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/gabriel/gabriel_cel_lab4_itemI.png" alt="foto do gabriel (Reconstrução da Imagem colorida e Cálculo da MSE de cada plano de cor e da PSNR total)" onclick="expandImage(this)">
+        <img src="assets/img/fotos lab 4/ladrilho/ladrilho_lab4_itemI.png" alt="foto do grupo (Reconstrução da Imagem colorida e Cálculo da MSE de cada plano de cor e da PSNR total)" onclick="expandImage(this)">
+    </div>
+
+    <h3>Tabela de conversão</h3>
+    <div class="gallery">
+        <img src="assets/img/fotos lab 4/tabela.png" alt="Tabela de conversão" onclick="expandImage(this)">
+    </div>
+
+    <h3>Vídeo com Blender</h3>
+    <p><a href="https://www.youtube.com/watch?v=KJzotiujYck">Clique aqui para visualizar o vídeo feito no Blender</a></p>
+
+    <h3>Comentários e conclusões</h3>  
+    <p class="resumo">Na conclusão deste relatório de laboratório sobre Codificação de Imagem por DWT, observamos que essa técnica de compressão é 
+        muito eficaz para reduzir a redundância e otimizar o armazenamento e a transmissão de imagens, representando a imagem em múltiplas escalas e frequências e 
+        decompondo ela em sub-bandas que facilitam a eliminação de dados menos perceptíveis ao olho humano.</p>
+    <p class="resumo">Comprovamos através da prática que, ao aplicar a DWT, a imagem original pode ser comprimida com uma perda mínima de qualidade 
+        perceptível, especialmente nas frequências mais altas. Através dos resultados, é possível ver que a DWT é uma ferramenta promissora em aplicações de compressão, equilibrando a 
+        eficiência de armazenamento e a qualidade da imagem reconstruída.</p>
     </main>
 
     <footer>
         <p>Página confeccionada para a disciplina de Codificação de Sinais Multimidia 2024.3</p>
         <p>Professor: Mário Minami</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

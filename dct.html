@@ -26,7 +26,11 @@
         </audio>
         <p>Alt: Controlador de áudio com as informações da página inicial</p>
 
-
+        <div id="popup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img class="popup-content" id="expandedImage">
+            <div id="caption"></div>
+        </div>
         
         <h3>Introdução</h3>
         <p class="texto_dct">A compressão de imagens é essencial para o armazenamento e 
@@ -51,8 +55,10 @@
 
 
         <h3>A Transformada Discreta de Cosseno (DCT)</h3>
-        <img src="assets/img/fotos lab 3/DCT/brunon_reconstruida.png" alt="foto do lucas" class="equacao">
-        <p>Alt: Imagem de um bloco 8x8 da imagem original e o mesmo bloco reconstruído pela DCT</p>
+        <div class="gallery">
+        <img src="assets/img/fotos lab 3/DCT/brunon_reconstruida.png" alt="Imagem de um bloco 8x8 da imagem original e o mesmo bloco reconstruído pela DCT" onclick="expandImage(this)">
+        </div>
+
         <p class="texto_dct">A DCT é uma transformação matemática que decompõe uma imagem em uma soma de componentes de frequência, 
             convertendo dados do domínio espacial para o domínio da frequência para identificar partes da imagem que podem ser comprimidas.</p>
 
@@ -65,8 +71,9 @@
 
         <p class="texto_dct">Contras: Pode introduzir artefatos em imagens altamente comprimidas e depende da quantização dos coeficientes. Dividir a imagem em blocos 
             menores pode gerar artefatos de blocagem em compressões mais altas, um efeito visual conhecido como "blockiness".</p>
-        <img src="assets/img/dct/image1.png" alt="foto do Lucas (celular)" class="equacao">
-        <p>Alt: Imagem com 90% e 10% de compressão para demonstrar o efeito de artefato</p>
+        <div class="gallery">
+        <img src="assets/img/dct/image1.png" alt="Imagem com 90% e 10% de compressão para demonstrar o efeito de artefato" onclick="expandImage(this)">
+        </div>
 
         <p class="texto_dct_bold">Por que usar a DCT:</p>
         <p class="texto_dct">Eficiência Energética e Compactação de Informação;</p>
@@ -80,8 +87,9 @@
         <p class="texto_dct_bold">Distribuição de Frequências:</p>
         <p class="texto_dct">Baixa Frequência: Representa características gerais e mais perceptíveis da imagem.</p>
         <p class="texto_dct">Alta Frequência: Detalhes finos e texturas, menos perceptíveis após quantização.</p>
-        <img src="assets/img/dct/image2.png" alt="foto do Lucas (celular)" class="equacao">
-        <p>Alt: Imagem com elementos de baixa frequência (esquerda) e de alta frequência (direita)</p>
+        <div class="gallery">
+        <img src="assets/img/dct/image2.png" alt="Imagem com elementos de baixa frequência (esquerda) e de alta frequência (direita)" onclick="expandImage(this)">
+    </div>
 
         <h3>Ortogonalidade</h3>
         <p class="texto_dct">A DCT é uma transformada ortogonal, garantindo que seus vetores de base sejam independentes, o que permite uma transformação eficiente e inversível.</p>
@@ -90,33 +98,41 @@
 
         <h3>DCT 1D e 2D</h3>
         <p class="texto_dct">DCT 1D: Utilizada principalmente em sinais de áudio e em processos preliminares de imagens.</p>
-        <img src="assets/img/dct/equacao1.png" alt="foto do Lucas (celular)" class="equacao">
+        <div class="gallery">
+        <img src="assets/img/dct/equacao1.png" alt="equação 1d" onclick="expandImage(this)">
+    </div>
         <p class="texto_dct">DCT 2D: Fundamental em compressão de imagens, como o JPEG, pois trabalha em blocos bidimensionais.</p>
-        <img src="assets/img/dct/equacao2.png" alt="foto do Lucas (celular)" class="equacao">
+        <div class="gallery">
+        <img src="assets/img/dct/equacao2.png" alt="equação 2d" onclick="expandImage(this)">
+    </div>
         <p class="texto_dct">A DCT 2D pode ser computada aplicando a DCT 1D em linhas e colunas separadamente, facilitando a computação.</p>
 
 
         <h3>Etapas da DCT (exemplo para formato JPEG)</h3>
         <p class="texto_dct_bold">Divisão da imagem em blocos (geralmente 8x8)</p>
         <p class="texto_dct">Cada pixel possui um valor entre 0 e 256.</p>
-        <img src="assets/img/dct/image5.png" alt="foto do Lucas (celular)" class="equacao">
-        <p>Alt: Imagem de bloco 8x8 pixels</p>
+        <div class="gallery">
+        <img src="assets/img/dct/image5.png" alt="Imagem de bloco 8x8 pixels" onclick="expandImage(this)">
+    </div>
 
         <p class="texto_dct_bold">Subtração do valor de cada pixel por 128</p>
         <p class="texto_dct">O range se tornará algo entre -128 e 127, onde o primeiro é o preto e o segundo, o branco.</p>
-        <img src="assets/img/dct/image4.png" alt="foto do Lucas (celular)" class="equacao">
-        <p>Alt: Subtração dos pixels por 128</p>
+        <div class="gallery">
+        <img src="assets/img/dct/image4.png" alt="Subtração dos pixels por 128" onclick="expandImage(this)">
+    </div>
 
         <p class="texto_dct_bold">Utilização da imagem padrão</p>
         <p class="texto_dct">Qualquer imagem pode ser formada utilizando a combinação dessas 64 imagens base. Os 64 pixels 
             da imagem original são transformados em 64 valores que representam o quanto de cada imagem base foi utilizada.</p>
         <p class="texto_dct">A DCT não comprime, mas facilita identificar quais partes podem ser mantidas com mais precisão e quais podem ser reduzidas sem comprometer a qualidade da imagem de maneira perceptível.</p>
-        <img src="assets/img/dct/image6.png" alt="foto do Lucas (celular)" class="equacao">
-        <p>Alt: Imagem com as 64 imagens padrão</p>
+        <div class="gallery">
+        <img src="assets/img/dct/image6.png" alt="Imagem com as 64 imagens padrão" onclick="expandImage(this)">
+    </div>
 
         <p class="texto_dct"></p>
-        <img src="assets/img/dct/equacao3.png" alt="foto do Lucas (celular)" class="equacao">
-        <p>Alt: equação representada pela imagem acima</p>
+        <div class="gallery">
+        <img src="assets/img/dct/equacao3.png" alt="equação representada pela imagem acima" onclick="expandImage(this)">
+    </div>
         <p class="texto_dct">onde:</p>
         <p class="texto_dct">f(x,y) representa o valor de pixel na posição (x,y).</p>
         <p class="texto_dct">F(u,v) é o coeficiente DCT resultante para a frequência (u,v).</p>
@@ -135,11 +151,13 @@
         <p class="texto_dct">Maior quantização significa menor qualidade visual, mas maior compressão.</p>
         <p class="texto_dct">Os coeficientes de baixa frequência geralmente concentram a maior parte da energia do sinal de imagem.</p>
         <p class="texto_dct">Maior parte dos coeficientes de alta frequência são próximos de zero, o que facilita a compressão ao serem ignorados ou altamente quantizados.</p>
-        <img src="assets/img/dct/image3.png" alt="foto do Lucas (celular)" class="equacao">
-        <p>Alt: Etapas da quantização</p>
+        <div class="gallery">
+        <img src="assets/img/dct/image3.png" alt="Etapas da quantização" onclick="expandImage(this)">
+    </div>
         <p class="texto_dct"></p>
-        <img src="assets/img/dct/image7.png" alt="foto do Lucas (celular)" class="equacao">
-        <p>Alt: Tabela de quantização para Jpegs</p>
+        <div class="gallery">
+        <img src="assets/img/dct/image7.png" alt="Tabela de quantização para Jpegs" onclick="expandImage(this)">
+    </div>
 
         <h3>Conclusão</h3>
         <p class="texto_dct">A DCT é muito útil na compressão de imagens devido à sua eficiência em representar dados visuais com menos coeficientes, 
@@ -161,6 +179,7 @@
         <p>Página confeccionada para a disciplina de Codificação de Sinais Multimidia 2024.3</p>
         <p>Professor: Mário Minami</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
