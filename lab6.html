@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Laboratório 6</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img class="ufabc" src="assets/img/ufabc.png" alt="ufabc logo"></a>
+        <h1>PDS da Voz e Áudio</h1>
+        <h2>Laboratório 6</h2>
+    </header>
+
+    <main>
+        <audio controls class="audio">
+            <source src="" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: Controlador de áudio com as informações da página</p>
+        <h3>Objetivos</h3>
+        <ul>
+            <li>Gravar e comparar sinais de voz com vários tipos de microfones: dinâmico, capacitivo;</li>
+            <li>Observar características temporais importantes no Sinal de Voz, como Envoltória de Energia e Pitch, procurando automatizar sua detecção;</li>
+            <li>Observar com a ferramenta tempo-frequência, Espectrograma, características no DF da voz como Frequência Fundamental (F0) e as Formantes.</li>
+        </ul>
+        <h3>Materiais</h3>
+        <ul>
+            <li>Google Colab</li>
+            <li>OpenCV</li>
+            <li>1 interface M-Audio Profire 610, conexão Firewire, com cabo firewire</li>
+            <li>Driver instalado no computador, para M-Audio Profire 610: https://m-audio.com/support/download/drivers/profire-6.1.1</li>
+            <li>1 microfone capacitivo Behinger (prata) com pedestal (no local reservado)</li>
+            <li>1 microfone dinâmico Shure (preto) com suporte de mesa</li>
+            <li>1 microfone capacitivo AKG de estúdio com pedestal (no local reservado)</li>
+            <li>2 microfones capacitivos Shure PK81, em montagem estéreo, na barreira acústica (só noite)</li>
+            <li>1 fone de ouvido envolvente AKG</li>
+            <li>Software Goldwave ou Audacity no micro de interface</li>
+        </ul>
+        <h3>Metodologia</h3>
+        <p class="resumo">Inicialmente, realizamos a gravação da introdução da música "bohemian Rhapsody" da banda Queen utilizando os microfones dinâmico (Shure) e capacitivo (AKG), além de 
+            também realizarmos a gravação de vídeo separadamente para realizar a junção posteriormente.
+        </p>
+        <p class="resumo">Em seguida, realizamos as gravações individuais dos áudios do nome completo de cada integrante, dos números de RA, de uma frase e de um verso da Lírica de Camões para o posterior 
+            processamento deles, utilizando o microfone dinâmico.
+        </p>
+        <p class="resumo">Por fim, realizamos a captura de áudio dentro de uma barreira acustica (diálogo entre personagens) utilizado dois microfones PK81 Shure na configuração estéreo, onde 3 integrantes realizaram a vocalização 
+            (Lucas, Bruno N. e Gabriel) e o quarto (Bruno K.) realizou o controle da gravação. Os áudios coletados foram então utilizados no processamento presente do documento abaixo.
+        </p>
+
+        <p class="resumo"></p>
+        <p><a href="assets/download/Lab6_PDS_Voz_v2.ipynb" download="Lab6_PDS_Voz_v2.ipynb">Clique aqui para baixar o arquivo do código utilizado</a></p>
+        
+        <h3>Áudios originais (Música)</h3>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/grupo/gravaçao bohemian.wav" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <h3>Áudios originais (diálogo)</h3>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/grupo/pixel rangers.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <h3>Áudios originais (Nomes)</h3>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Lucas/LucasMedeiros.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Bruno k/BrunoKuvasney.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Bruno Neves Carneiro/1_BrunoNevesCarneiro.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Gabriel/GabrielAndradeDeVasconcelos.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <h3>Áudios originais (RA)</h3>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Lucas/RA11201922156.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Bruno k/RA11202021334.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Bruno Neves Carneiro/RA11202020201.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Gabriel/RA11202020153.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <h3>Áudios originais (Frase)</h3>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Lucas/Frase1_Medeiros.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Bruno k/Bruno_PORTA.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Bruno Neves Carneiro/frase1_BrunoNevesCarneiro.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Gabriel/Gabriel_EntrePorEstaPorta.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <h3>Áudios originais (Verso)</h3>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Lucas/Camoes_LucasMedeiros.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Bruno k/Bruno_Camoes.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Bruno Neves Carneiro/1_Camoes_BrunoNevesCarneiro.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 6/Gabriel/Camoes_Andrade.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+    <h3>Comentários e conclusões</h3>  
+
+    </main>
+
+    <footer>
+        <p>Página confeccionada para a disciplina de Codificação de Sinais Multimidia 2024.3</p>
+        <p>Professor: Mário Minami</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

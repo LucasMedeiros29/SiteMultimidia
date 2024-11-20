@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Laboratório 5</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img class="ufabc" src="assets/img/ufabc.png" alt="ufabc logo"></a>
+        <h1>Percepção Auditiva</h1>
+        <h2>Laboratório 5</h2>
+    </header>
+
+    <main>
+        <audio controls class="audio">
+            <source src="" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: Controlador de áudio com as informações da página</p>
+        <h3>Objetivos</h3>
+        <ul>
+            <li>Constatar as características psicoacústicas de pessoas distintas de sensibilidade à intensidade, banda audível e mascaramento harmônico;</li>
+            <li>Efetuar medições de localização azimutal, em rodízio no setup;</li>
+            <li>Efetuar alguns procedimentos de medição e aferição acústicos e depois analisá-los.</li>
+        </ul>
+        <h3>Materiais</h3>
+        <ul>
+            <li>Google Colab</li>
+            <li>OpenCV</li>
+            <li>Fone de Ouvido profissional envolvente</li>
+            <li>Capacete com transferidor acoplado na parte superior</li>
+            <li>Pedestal de microfone com caixa acústica bluetooth fixada na ponta</li>
+            <li>Celular para conexão bluetooth com a caixa acústica</li>
+            <li>Um capacete com um transferidor montado no centro superior e um fio de prumo de direção</li>
+            <li>Óculos recoberto (ou uma banda para os olhos)</li>
+            <li>arquivos de áudio</li>
+
+        </ul>
+        <h3>Metodologia</h3>
+        <p class="resumo">Inicialmente, cada integrante realizou um teste de audiometria online utilizando o fone de ouvido envolvente. Os resultados foram salvos em formato pdf e realizados pelo menos duas vezes por cada integrante. </p>
+        <a href="https://hearingtest.online/"><p >link do teste de audiometria</p></a>
+        <p class="resumo">Em seguida, todos realizaram um outro teste de faixa auditível, também utilizando o microfone envolvente. Os valores de frequência mínima audível (faMÍN) e frequência máxima audível (faMÁX) foram anotados em uma tabela e dispobilizados abaixo.</p>
+        <a href="https://www.youtube.com/watch?v=H-iCZElJ8m0"><p>link do teste de faixa auditível</p></a>
+        <p class="resumo">O terceiro consiste de um teste de localização de fonte sonora, onde cada participante realizou seis medições, três com um som de chaves e três com um som de sinos. Os participantes foram vendados e utilizavam um capacete com transferidor para determinar o ângulo no qual a fonte sonora ficaria, tendo o participante que adivinhar onde era essa localização.</p>
+        <p class="resumo">O último é um teste de mascaramento de tons harmônicos, onde cada participante, utilizando o notebook fornecido abaixo, deveria procurar o limiar de atenuação em que os dois tons harmônicos, f1 e f2, em passos de atenuação de 5dB.</p>
+        <p><a href="assets/download/Lab5_Percepcao_Audio_mask_v2.ipynb" download="Lab5_Percepcao_Audio_mask_v2.ipynb">Clique aqui para baixar o arquivo do código referenet a esse laboratório</a></p>
+
+        <h3>Resultados do teste de Audiometria</h3>
+        <div class="gallery">
+            <img src="assets/img/lab 5/TESTE BRUNOK 1.jpg" alt="teste do Bruno K" onclick="expandImage(this)">
+            <img src="assets/img/lab 5/TESTE BRUNOK 2.jpg" alt="teste 2 do Bruno K" onclick="expandImage(this)">
+            <img src="assets/img/lab 5/TESTE BRUNON 1.jpg" alt="teste do Bruno N" onclick="expandImage(this)">
+            <img src="assets/img/lab 5/TESTE BRUNON 2.jpg" alt="teste 2 do Bruno N" onclick="expandImage(this)">
+            <img src="assets/img/lab 5/TESTE LUCAS 1.jpg" alt="teste do Lucas " onclick="expandImage(this)">
+            <img src="assets/img/lab 5/TESTE LUCAS 2.jpg" alt="teste 2 do Lucas " onclick="expandImage(this)">
+            <img src="assets/img/lab 5/TESTE GABRIEL 1.jpg" alt="teste do Gabriel " onclick="expandImage(this)">
+            <img src="assets/img/lab 5/TESTE GABRIEL 2.jpg" alt="teste 2 do Gabriel " onclick="expandImage(this)">
+        </div>
+        <div id="popup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img class="popup-content" id="expandedImage">
+            <div id="caption"></div>
+        </div>
+
+        <h3>Resultados do teste de Faixa Auditível</h3>
+        <div class="gallery">
+            <img src="assets/img/lab 5/tabela1.png" alt="tabela do teste de faixa auditível" onclick="expandImage(this)">
+        </div>
+
+        <h3>Resultados do teste de Localização de Fonte Sonora</h3>
+        <div class="gallery">
+            <img src="assets/img/lab 5/tabela2.png" alt="tabela do teste de Localização de Fonte Sonora" onclick="expandImage(this)">
+        </div>
+
+        <h3>Resultados do teste de Mascaramento de Tons Harmônicos</h3>
+        <div class="gallery">
+            <img src="assets/img/lab 5/tabela3.png" alt="tabela do teste de Mascaramento de Tons Harmônicos" onclick="expandImage(this)">
+        </div>
+
+    <h3>Comentários e conclusões</h3>  
+        <p class="resumo">Um outro teste psicoacústico que podemos citar é o Teste de Discriminação de Duração. Ele avalia a capacidade do ouvido humano de perceber 
+            diferenças na duração de sons apresentados. Ele envolve a apresentação de dois tons, normalmente com a mesma frequência e intensidade, mas com durações 
+            um pouco diferentes. O participante precisa identificar qual dos tons tem a duração mais longa ou a mais curta. As durações deles são ajustadas de acordo 
+            com o desempenho do participante, variando de modo a explorar a capacidade de discriminação em diferentes intervalos de tempo. Ele é utilizado para estudar 
+            como o sistema auditivo processa variações temporais,</p>
+        <p class="resumo">Um estudo recente explorou a relação entre as emissões otoacústicas (EOAs) e a percepção psicoacústica de perda auditiva induzida por ruído. Esse 
+            trabalho investiga como as emissões otoacústicas de produto de distorção (DPOAEs) podem ser usadas para monitorar danos nas células ciliadas da cóclea em indivíduos 
+            com perda auditiva devido à exposição a sons intensos. A pesquisa mostra que as características das DPOAEs podem fornecer informações adicionais sobre a percepção de 
+            perda auditiva, além dos testes audiométricos tradicionais, revelando como o sistema auditivo processa o som em níveis de intensidade elevados. O estudo sugere que essa 
+            relação pode ajudar na detecção precoce de danos auditivos, muito antes que o paciente perceba uma perda significativa na audição (fonte: <a href="https://pubs.aip.org/asa/poma/article/19/1/050099/962117/Relationship-of-distortion-product-otoacoustic">https://pubs.aip.org/asa/poma/article/19/1/050099/962117/Relationship-of-distortion-product-otoacoustic</a> )</p>
+    </main>
+
+    <footer>
+        <p>Página confeccionada para a disciplina de Codificação de Sinais Multimidia 2024.3</p>
+        <p>Professor: Mário Minami</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
