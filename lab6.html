@@ -279,6 +279,57 @@
             os fonemas plosivos encontrados através do espectrograma do áudio foram /d/, no começo de todos os números dois pronunciados, e /k/, no final do pronunciamento do número cinco. Eles podem ser 
             localizados no espectrograma através de um pico de energia da voz precedido por um vazio.
         </p>
+        <h2>COLAB (Bruno Kuvasney)</h2>
+        <h3>Contornos de Energia para dígitos, voz falada e poema</h3>
+        <div class="gallery">
+            <img src="assets/img/lab 6/BrunoKalcanhoto.png" alt="Contorno de Energia do trecho da música Vambora da Adriana Calcanhoto" onclick="expandImage(this)">
+            <img src="assets/img/lab 6/BrunoCamoesEnergia.png" alt="Contorno de Energia do trecho de Camões" onclick="expandImage(this)">
+            <img src="assets/img/lab 6/BrunoDigitosEnergia.png" alt="Contorno de Energia para dígitos do RA (11202021334)" onclick="expandImage(this)">
+        </div>
+
+        <h3>Espectrogramas para dígitos, voz falada e poema</h3>
+        <div class="gallery">
+            <img src="assets/img/lab 6/BrunoKalcanhotoEspectro.png" alt="Espectrograma do trecho da música Vambora da Adriana Calcanhoto" onclick="expandImage(this)">
+            <img src="assets/img/lab 6/BrunoCamoesEspectro.png" alt="Espectrograma do trecho de Camões" onclick="expandImage(this)">
+            <img src="assets/img/lab 6/BrunoDigitosEspectro.png" alt="Espectrograma para dígitos do RA (11202021334)" onclick="expandImage(this)">
+        </div>
+        <h2></h2>
+        <p class="trecho">A partir dos espectrogramas, calculamos novamente os contornos de energia dos arquivos em questão:</p>
+        <div class="gallery">
+            <img src="assets/img/lab 6/BrunoKalcanhotoEnergia2.png" alt="Contorno de Energia do trecho da música Vambora da Adriana Calcanhoto" onclick="expandImage(this)">
+            <img src="assets/img/lab 6/BrunoCamoesEnergia2.png" alt="Contorno de Energia do trecho de Camões" onclick="expandImage(this)">
+            <img src="assets/img/lab 6/BrunoDigitosEnergia2.png" alt="Contorno de Energia para dígitos do RA (11202021334)" onclick="expandImage(this)">
+        </div>
+
+        <h3>Período de Pitch e Fundamental de uma vogal para dígitos, voz falada e poema</h3>
+        <div class="gallery">
+            <img src="assets/img/lab 6/BrunoKalcanhotoAutocorrelação.png" alt="Período de Pitch e Fundamental de uma vogal do trecho da música Vambora da Adriana Calcanhoto" onclick="expandImage(this)">
+            <img src="assets/img/lab 6/BrunoCamoesAutocorrelação.png" alt="Período de Pitch e Fundamental de uma vogal do trecho de Camões" onclick="expandImage(this)">
+            <img src="assets/img/lab 6/BrunoDigitosAutocorrelação.png" alt="Período de Pitch e Fundamental de uma vogal para dígitos do RA (11202021334)" onclick="expandImage(this)">
+        </div>
+        <p class="resumo">Para o caso do trecho da música Vambora da Adriana Calcanhoto, podemos notar que a vogal em questão (/en/ de "entre"), apresenta pitch de 7.2 ms (primeiro pico significativo da autocorrelação após o lag zero) e frequência fundamental de 138,8 Hz (1000/pitch, já que está em ms).</p>
+        <p class="resumo">Para o caso do trecho de Camões, podemos notar que a vogal em questão (primeiro /a/ de "Campos"), apresenta pitch de 4.5 ms e frequência fundamental de 222,2 Hz.</p>
+        <p class="resumo">Para o caso dos dígitos do RA (11202021334), podemos notar que a vogal em questão (/u/ do número um), apresenta pitch de 5.5 ms e frequência fundamental de 181,8 Hz.</p>
+
+        <h3>Formantes do trecho para dígitos, voz falada e poema</h3>
+        <div class="gallery">
+            <img src="assets/img/lab 6/BrunoKalcanhotoFormantes.png" alt="Formantes do trecho da música Vambora da Adriana Calcanhoto" onclick="expandImage(this)">
+            <img src="assets/img/lab 6/BrunoCamoesFormantes.png" alt="Formantes do trecho de Camões" onclick="expandImage(this)">
+            <img src="assets/img/lab 6/BrunoDigitosFormantes.png" alt="Formantes para dígitos do RA (11202021334)" onclick="expandImage(this)">
+        </div>
+
+        <p class="resumo">As formantes de f1 a f4 (quatro primeros picos no espectro) do trecho da música Vambora da Adriana Calcanhoto estão situados em F1: 100 Hz, F2: 450 Hz, F3: 1100 Hz e F4: 1750 Hz.</p>
+        <p class="resumo">As formantes de f1 a f4 do trecho de Camões estão situados em F1: 200 Hz, F2: 410 Hz, F3: 650 Hz e F4: 850 Hz.</p>
+        <p class="resumo">As formantes de f1 a f4 dos dígitos do RA (11201922156) estão situados em F1: 150 Hz, F2: 350 Hz, F3: 510.35 Hz e F4: 695 Hz.</p>
+
+        <h3>Determinação de Consoantes e Plosivos para dígitos, voz falada e poema</h3>
+        <div class="gallery">
+            <img src="assets/img/lab 6/BrunoKuvasneyEspectroCru.png" alt="Espectro para o áudio contendo a fala Bruno Melati Kuvasney" onclick="expandImage(this)">
+            <img src="assets/img/lab 6/BrunoKuvasneyEspectro.png" alt="Espectro com alguns fonemas plosivos de Bruno Melati Kuvasney" onclick="expandImage(this)">
+        </div>
+        <p class="resumo">Para determinação dos fonemas plosivos, utilizei o áudio de meu nome (Bruno Melati Kuvasney) por ter sílabas bem separadas. Logo, 
+            os fonemas plosivos encontrados através do espectrograma do áudio foram /b/ e /o/ em Bruno, e /m/ em Melati e /k/ em Kuvasney.
+        </p>
 
     <h3>Comentários e conclusões</h3>  
     <p class="resumo">Este relatório explorou a gravação e análise de sinais de voz com diferentes microfones, técnicas de processamento temporal e tempo-frequência, além de características acústicas da prosódia em diferentes contextos. O trabalho evidenciou a importância da escolha de equipamentos e métodos para a captura e análise do som, bem como a riqueza das informações presentes na voz humana.</p>
