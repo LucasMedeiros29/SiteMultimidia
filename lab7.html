@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Laboratório 7</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img class="ufabc" src="assets/img/ufabc.png" alt="ufabc logo"></a>
+        <h1>Codificação de Voz</h1>
+        <h2>Laboratório 7</h2>
+    </header>
+
+    <main>
+        <audio controls class="audio">
+            <source src="assets/audio/lab7.waptt.opus" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: Controlador de áudio com as informações da página</p>
+        <h3>Objetivos</h3>
+        <ul>
+            <li>Determinação dos parâmetros LPC</li>
+            <li>Separação Sonora/Surda</li>
+            <li>Espectro, Envoltória LP e Formantes f1 a f4</li>
+            <li>Estimação da f0 e do Pitch</li>
+        </ul>
+        <h3>Materiais</h3>
+        <ul>
+            <li>Google Colab</li>
+            <li>Bibliotecas do OpenCV e Python</li>
+            <li>Áudios gravados em laboratórios anteriores</li>
+        </ul>
+        <h3>Metodologia</h3>
+        <p class="resumo">Neste laboratório, utilizaremos das bibliotecas do Python e do Google Colab para analisarmos o processo de codificação de dois áudios 
+            gravados anteriormente (Nome completo e trecho da música Vambora de Adriana Calcanhotto), determinando seus parâmetros LPC, suas frequências formantes, sua frequência 
+        fundamental, seu Pitch, a separação U/UV, o espectro e a envoltória LPC.</p>
+        
+        <p class="resumo"></p>
+        <p><a href="assets/download/Lab7_AnaliseLPCVoz_v2.ipynb" download="Lab7_AnaliseLPCVoz_v2.ipynb">Clique aqui para baixar o arquivo do código utilizado</a></p>
+
+        <h3></h3>
+        <h2>Trechos analisados</h2>
+        
+        <audio controls class="audio">
+            <source src="assets/audio/lab 7/audio_nome_lucas.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p class="trecho">Trecho do Nome de Lucas (Alt:Lucas Pereira)</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 7/audio_frase_lucas.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p class="trecho">Trecho da música de Lucas (Alt:Entre por esta porta agora)</p>
+        
+        <audio controls class="audio">
+            <source src="assets/audio/lab 7/audio_nome_gabriel.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p class="trecho">Trecho do Nome de Gabriel (Alt:Gabriel An)</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 7/audio_frase_gabriel.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p class="trecho">Trecho da música de Gabriel (Alt:Entre por esta porta agora)</p>
+
+        <audio controls class="audio">
+            <source src="assets/audio/lab 7/audio_nome_brunonk.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p class="trecho">Trecho do Nome de Bruno K. (Alt:Bruno Mel)</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 7/audio_frase_brunok.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p class="trecho">Trecho da música de Bruno K. (Alt:Entre por esta porta agora)</p>
+
+        <audio controls class="audio">
+            <source src="assets/audio/lab 7/audio_nome_brunon.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p class="trecho">Trecho do Nome de Bruno N. (Alt:No Neves Carneiro)</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 7/audio_frase_brunon.wav" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p class="trecho">Trecho da música de Bruno N. (Alt:Entre por esta porta agora)</p>
+
+
+        <h3></h3>
+        <h2>Espectro e Envoltória LP dos Sonoros e Surdos</h2>
+        <h3>Lucas</h3>
+        <div id="popup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img class="popup-content" id="expandedImage">
+            <div id="caption"></div>
+        </div>
+        <p class="trecho">Trecho do Nome</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/onda_nome_lucas.png" alt="onda sonora do trecho do nome de Lucas" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/sonoros_nome_lucas.png" alt="sonoros do trecho do nome de Lucas" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/surdos_nome_lucas.png" alt="surdos do trecho do nome de Lucas" onclick="expandImage(this)">
+        </div>
+        <p class="resumo"></p>
+        <p class="trecho">Trecho da Música</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/onda_frase_lucas.png" alt="onda sonora do trecho da música de Lucas" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/sonoros_frase_lucas.png" alt="sonoros do trecho da música de Lucas" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/surdos_frase_lucas.png" alt="surdos do trecho da música de Lucas" onclick="expandImage(this)">
+        </div>
+        <h3>Gabriel</h3>
+        <p class="trecho">Trecho do Nome</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/onda_nome_gabriel.png" alt="onda sonora do trecho do nome de Gabriel" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/sonoros_nome_gabriel.png" alt="sonoros do trecho do nome de Gabriel" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/surdos_nome_gabriel.png" alt="surdos do trecho do nome de Gabriel" onclick="expandImage(this)">
+        </div>
+        <p class="resumo"></p>
+        <p class="trecho">Trecho da Música</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/onda_frase_gabriel.png" alt="onda sonora do trecho da música de Gabriel" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/sonoros_frase_gabriel.png" alt="sonoros do trecho da música de Gabriel" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/surdos_frase_gabriel.png" alt="surdos do trecho da música de Gabriel" onclick="expandImage(this)">
+        </div>
+        <h3>Bruno K.</h3>
+        <p class="trecho">Trecho do Nome</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/onda_nome_brunok.png" alt="onda sonora do trecho do nome de Bruno K." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/sonoros_nome_brunok.png" alt="sonoros do trecho do nome de Bruno K." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/surdos_nome_brunok.png" alt="surdos do trecho do nome de Bruno K." onclick="expandImage(this)">
+        </div>
+        <p class="resumo"></p>
+        <p class="trecho">Trecho da Música</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/onda_frase_brunok.png" alt="onda sonora do trecho da música de Bruno K." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/sonoros_frase_brunok.png" alt="sonoros do trecho da música de Bruno K." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/surdos_frase_brunok.png" alt="surdos do trecho da música de Bruno K." onclick="expandImage(this)">
+        </div>
+        <h3>Bruno N.</h3>
+        <p class="trecho">Trecho do Nome</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/onda_nome_brunon.png" alt="onda sonora do trecho do nome de Bruno N." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/sonoros_nome_brunon.png" alt="sonoros do trecho do nome de Bruno N." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/surdos_nome_brunon.png" alt="surdos do trecho do nome de Bruno N." onclick="expandImage(this)">
+        </div>
+        <p class="resumo"></p>
+        <p class="trecho">Trecho da Música</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/onda_frase_brunon.png" alt="onda sonora do trecho da música de Bruno N." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/sonoros_frase_brunon.png" alt="sonoros do trecho da música de Bruno N." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/surdos_frase_brunon.png" alt="surdos do trecho da música de Bruno N." onclick="expandImage(this)">
+        </div>
+
+
+        <h3></h3>
+        <h2>Frequência formantes de vogais</h2>
+        <p class="trecho">Analisando os espectros do trecho da música, as frequências formantes encontradas foram: </p>
+        <h3>Lucas</h3>
+        <p class="resumo"></p>
+        <p class="trecho">/o/ F1 =  350.93664951762923 Hz e F2 =  2456.5565466234043 Hz</p>
+        <p class="resumo"></p>
+        <p class="trecho">/a/ F1 =  701.8732990352585 Hz e F2 =  2105.619897105775 Hz</p>
+        <p class="resumo"></p>
+        <p class="trecho">/e/ F1 =  350.93664951762923 Hz e F2 =  2105.619897105775 Hz</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/triangulo_lucas.png" alt="Triangulo de vogais de Lucas" onclick="expandImage(this)">
+        </div>
+        <h3>Gabriel</h3>
+        <p class="resumo"></p>
+        <p class="trecho">/e/ F1 =  701.8732990352585 Hz e F2 =  3860.303144693922 Hz</p>
+        <p class="resumo"></p>
+        <p class="trecho">/a/ F1 =  350.93664951762923 Hz e F2 =  1403.746598070517 Hz</p>
+        <p class="resumo"></p>
+        <p class="trecho">/o/ F1 =  701.8732990352585 Hz e F2 =  1052.8099485528876 Hz</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/triangulo_gabriel.png" alt="Triangulo de vogais de Gabriel" onclick="expandImage(this)">
+        </div>
+        <h3>Bruno K.</h3>
+        <p class="resumo"></p>
+        <p class="trecho">/e/ F1 =  350.93664951762923 Hz e F2 =  3158.429845658663 Hz</p>
+        <p class="resumo"></p>
+        <p class="trecho">/a/ F1 =  701.8732990352585 Hz e F2 =  3860.303144693922 Hz</p>
+        <p class="resumo"></p>
+        <p class="trecho">/o/ F1 =  350.93664951762923 Hz e F2 =  2456.5565466234043 Hz</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/triangulo_brunok.png" alt="Triangulo de vogais de Bruno K." onclick="expandImage(this)">
+        </div>
+        <h3>Bruno N.</h3>
+        <p class="resumo"></p>
+        <p class="trecho">/o/ F1 =  350.93664951762923 Hz e F2 =  2105.619897105775 Hz</p>
+        <p class="resumo"></p>
+        <p class="trecho">/a/ F1 =  1052.8099485528876 Hz e F2 =  3158.429845658663 Hz</p>
+        <p class="resumo"></p>
+        <p class="trecho">/e/ F1 =  350.93664951762923 Hz e F2 =  2456.5565466234043 Hz</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/triangulo_brunon.png" alt="Triangulo de vogais de Bruno N." onclick="expandImage(this)">
+        </div>
+
+        <p class="resumo">Embora os resultados acima se refiram apenas a um valor de ordem de análise (12), foram realizadas diferentes processamentos com os valores 8 e 18. Dessa forma, nota-se 
+            que uma ordem de 8, considerada baixa, resulta em uma representação mais simplificada do espectro do sinal, onde as formantes (picos espectrais) podem não ser representadas com 
+            precisão suficiente, podendo levar à "perda" de detalhes, especialmente se o sinal contiver mais de três formantes principais. Na ordem 12, considerada moderada, 
+            pode-se notar que são capturadas as principais características da fala, incluindo os três primeiros formantes, que são cruciais para distinguir vogais e sons articulados, sendo uma ordem que 
+            equilibra precisão e eficiência computacional. Na ordem 18, que utiliza mais coeficientes, é possível capturar detalhes adicionais do espectro, podendo ser útil para sinais complexos ou com muitos 
+            formantes. Foi notado entretanto, que ordens muito altas podem introduzir ruído ou instabilidade nos coeficientes, especialmente se o sinal não for suficientemente longo ou se houver ruído no sinal, 
+            como no caso de alguns áudios utilizados.
+        </p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/triangulo.png" alt="Triangulo de vogais de Russo e Behlau, 1993" onclick="expandImage(this)">
+        </div>
+        <p class="resumo">Comparando com o triângulo de vogais de Russo e Behlau, 1993, podemos notar que nenhum triângulo anterior é completamente semelhante. Isso se deve a diversas causas, 
+            sendo elas as naturais, já que cada pessoa possui uma vocalidade singular, e as condicionais, como os ruídos e a possível má interpretação dos resultados ou a má execução do código, 
+            embora seja possível notar semelhanças entre os gráficos, como a vogal /a/ mais a diante que as demais, exceto para o Gabriel, e a mesma frequência F1 para as vogais /e/ e /o/.
+        </p>
+
+        <h2>Estimação da frequência fundamental e do Pitch</h2>
+        <h3>Lucas</h3>
+        <p class="trecho">Frequência fundamental</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/fo_nome_lucas.png" alt="Frequência fundamental do trecho do nome de Lucas" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/fo_frase_lucas.png" alt="Frequência fundamental do trecho da música de Lucas" onclick="expandImage(this)">
+        </div>
+            <p class="resumo"></p>
+            <p class="trecho">Pitch</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/pitch_nome_lucas.png" alt="Pitch do trecho do nome de Lucas" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/pitch_frase_lucas.png" alt="Pitch do trecho do nome de Lucas" onclick="expandImage(this)">
+        </div>
+            <p class="resumo"></p>
+            <p class="trecho">Espectrograma</p>
+        <div class="gallery"> 
+            <img src="assets/img/lab 7/espectro_nome_lucas.png" alt="Espectrograma do trecho do nome de Lucas" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/espectro_frase_lucas.png" alt="Espectrograma do trecho do nome de Lucas" onclick="expandImage(this)">
+        </div>
+
+        <h3>Gabriel</h3>
+        <p class="trecho">Frequência fundamental</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/fo_nome_gabriel.png" alt="Frequência fundamental do trecho do nome de Gabriel" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/fo_frase_gabriel.png" alt="Frequência fundamental do trecho da música de Gabriel" onclick="expandImage(this)">
+        </div>
+            <p class="resumo"></p>
+            <p class="trecho">Pitch</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/pitch_nome_gabriel.png" alt="Pitch do trecho do nome de Gabriel" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/pitch_frase_gabriel.png" alt="Pitch do trecho do nome de Gabriel" onclick="expandImage(this)">
+        </div>
+            <p class="resumo"></p>
+            <p class="trecho">Espectrograma</p>
+        <div class="gallery"> 
+            <img src="assets/img/lab 7/espectro_nome_gabriel.png" alt="Espectrograma do trecho do nome de Gabriel" onclick="expandImage(this)">
+            <img src="assets/img/lab 7/espectro_frase_gabriel.png" alt="Espectrograma do trecho do nome de Gabriel" onclick="expandImage(this)">
+        </div>
+
+        <h3>Bruno K.</h3>
+        <p class="trecho">Frequência fundamental</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/fo_nome_brunok.png" alt="Frequência fundamental do trecho do nome de Bruno K." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/fo_frase_brunok.png" alt="Frequência fundamental do trecho da música de Bruno K." onclick="expandImage(this)">
+        </div>
+            <p class="resumo"></p>
+            <p class="trecho">Pitch</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/pitch_nome_brunok.png" alt="Pitch do trecho do nome de Bruno K." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/pitch_frase_brunok.png" alt="Pitch do trecho do nome de Bruno K." onclick="expandImage(this)">
+        </div>
+            <p class="resumo"></p>
+            <p class="trecho">Espectrograma</p>
+        <div class="gallery"> 
+            <img src="assets/img/lab 7/espectro_nome_brunok.png" alt="Espectrograma do trecho do nome de Bruno K." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/espectro_frase_brunok.png" alt="Espectrograma do trecho do nome de Bruno K." onclick="expandImage(this)">
+        </div>
+
+        <h3>Bruno N.</h3>
+        <p class="trecho">Frequência fundamental</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/fo_nome_brunon.png" alt="Frequência fundamental do trecho do nome de Bruno N." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/fo_frase_brunon.png" alt="Frequência fundamental do trecho da música de Bruno N." onclick="expandImage(this)">
+        </div>
+            <p class="resumo"></p>
+            <p class="trecho">Pitch</p>
+        <div class="gallery">
+            <img src="assets/img/lab 7/pitch_nome_brunon.png" alt="Pitch do trecho do nome de Bruno N." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/pitch_frase_brunon.png" alt="Pitch do trecho do nome de Bruno N." onclick="expandImage(this)">
+        </div>
+            <p class="resumo"></p>
+            <p class="trecho">Espectrograma</p>
+        <div class="gallery"> 
+            <img src="assets/img/lab 7/espectro_nome_brunon.png" alt="Espectrograma do trecho do nome de Bruno N." onclick="expandImage(this)">
+            <img src="assets/img/lab 7/espectro_frase_brunon.png" alt="Espectrograma do trecho do nome de Bruno N." onclick="expandImage(this)">
+        </div>
+
+      
+    <h3>Comentários e conclusões</h3>  
+    <p class="resumo">Neste relatório realizamos uma análise detalhada dos parâmetros LPC, separação sonora/surda, espectro, envoltória LP, frequências formantes, e estimação da frequência fundamental (f0) e do pitch a partir de áudios gravados em laboratório, utilizando ferramentas como o Google Colab e bibliotecas Python (OpenCV, Librosa) para processar e analisar os sinais de áudio.</p>
+    <p class="resumo">A partir da análise das formantes e dos espectros das vogais, observamos que diferentes ordens de análise dos coeficientes LPC impactam a precisão da representação espectral. A ordem 8 apresentou uma simplificação excessiva, enquanto a ordem 12 proporcionou um bom equilíbrio entre precisão e eficiência computacional. Por outro lado, a ordem 18, apesar de detalhar mais aspectos do espectro, trouxe o risco de apresentar ruído e instabilidade nos coeficientes, especialmente em sinais ruidosos ou curtos.</p>
+    <p class="resumo">Ao comparar nossos resultados com o triângulo de vogais de Russo e Behlau (1993), observamos que as diferenças nos padrões podem ser atribuídas à variabilidade vocal de cada indivíduo, além de possíveis interferências de ruído ou erros na execução do código. No entanto, algumas semelhanças entre os gráficos foram notadas, como a posição da vogal /a/ em relação às outras e a coincidência de frequências F1 para as vogais /e/ e /o/.</p>
+    <p class="resumo">A estimação da frequência fundamental e do pitch foi obtida com sucesso utilizando o algoritmo pYIN, permitindo a visualização das variações temporais dessas frequências ao longo dos sinais de áudio. Esses parâmetros são cruciais para a análise acústica da fala, sendo aplicáveis em várias áreas, como reconhecimento de fala, síntese vocal e análise fonética.</p>
+    <p class="resumo">Em suma, as ferramentas utilizadas proporcionaram uma análise robusta dos sinais de áudio e as diferenças entre os resultados indicam a necessidade de ajustes finos nos parâmetros do processo de análise para obter uma representação mais precisa, dependendo das características do áudio analisado.</p>
+    </main>
+
+    <footer>
+        <p>Página confeccionada para a disciplina de Codificação de Sinais Multimidia 2024.3</p>
+        <p>Professor: Mário Minami</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
