@@ -16,35 +16,322 @@
     <header>
         <a href="index.html"><img class="ufabc" src="assets/img/ufabc.png" alt="ufabc logo"></a>
         <h1>Codificação de Áudio/MIDI e Resposta Impulsiva</h1>
-        <h2>Laboratório 8</h2>
+
     </header>
 
     <main>
+        <!-- PARTE DE Codificação de Áudio -->
+        <h2>Laboratório de Codificação de Áudio</h2>
         <audio controls class="audio">
             <source src="assets/audio/lab8.waptt.opus" type="audio/ogg">
             Seu navegador não suporta o elemento de áudio.
         </audio>
         <p>Alt: Controlador de áudio com as informações da página</p>
+
         <h3>Objetivos</h3>
         <ul>
-            <li></li>
+            <li>Conhecer as opções de codificação do ffmpeg</li>
+            <li>Verificar várias taxas mpeg 1, camada 3 e conversão entre codecs</li>
         </ul>
+
         <h3>Materiais</h3>
         <ul>
-            <li></li>
+            <li>Google Colab</li>
+            <li>Bibliotecas do OpenCV e Python</li>
+            <li>Áudios de trechos de músicas</li>
         </ul>
         <h3>Metodologia</h3>
-        <p class="resumo"></p>
-        
+        <p class="resumo">Para essa etapa do laboratório, foram utilizadas quatro músicas com estilos diferentes, cada uma escolhida por um dos integrantes, para ser realizada a codificação. 
+            Em seguida, utilizando o Google Colab e os códigos disponibilizados abaixo, realizamos a codificação com FFmpeg, um programa de computador que grava, converte e cria stream de áudio e vídeo em diversos formatos,
+             onde inicialmente codificamos para o formato MP3. Desta forma, realizamos a codificação para os tamanhos 128, 64, 32, 16 e 8 Kbps em MP3 e também realizamos a conversão para o formato OGG, utilizando a mesma ferramenta. 
+             Realizamos também a codificação com taxa variável para analisarmos a diferença com a taxa fixa, emitindo o espectrograma de cada etapa para os formatos MP3.
+        </p>
         <p class="resumo"></p>
         <p><a href="assets/download/Lab_Codificacao_Audio.ipynb" download="Lab_Codificacao_Audio.ipynb">Clique aqui para baixar o arquivo do código utilizado (Codificação de Áudio)</a></p>
+        
+        <h3>Áudios originais dos trechos das músicas</h3>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman.wav" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: Áudio original do trecho de Enter Sandman (Metallica), escolhido por Lucas Medeiros</p>
+        <p class="resumo"></p>
+        <p class="trecho">Say your prayers, little one</p>
+        <p class="trecho">Don't forget, my son</p>
+        <p class="trecho">To include everyone</p>
+        <p class="trecho">I tuck you in, warm within</p>
+        <p class="trecho">Keep you free from sin</p>
+        <p class="trecho">'Til the sandman, he comes</p>
+        <p class="trecho">Sleep with one eye open</p>
+        <p class="trecho">Gripping your pillow tight</p>
+        <p class="trecho">Exit light</p>
+        <p class="trecho">Enter night</p>
+
+
+        <h3>Espectrogramas originais</h3>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/espectrograma_sandman.png" alt="Espectrogramas do trecho da musica Enter Sandman" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Espectrogramas do trecho da musica Enter Sandman</p>
+
+        <h3>Conversão - Enter Sandman</h3>
+
+        <h4>MP3</h4>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_128k.mp3" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em MP3 128Kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_64k.mp3" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em MP3 64Kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_32k.mp3" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em MP3 32Kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_16k.mp3" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em MP3 16Kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_8k.mp3" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em MP3 8Kbps</p>
+
+        <h3></h3>
+        <h4>OGG</h4>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_64k.ogg" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em OGG 64Kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_32k.ogg" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em OGG 32Kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_16k.ogg" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em OGG 16Kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_8k.ogg" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em OGG 8Kbps</p>
+
+        <h3></h3>
+        <h4>MP3 e OGG com taxa variável</h4>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_320k_var.mp3" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em MP3 320kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_320k_var.ogg" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em OGG 320kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_128k_var.mp3" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em MP3 128Kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_128k_var.ogg" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em OGG 128Kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_65k_var.mp3" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em MP3 65Kbps</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandman_65k_var.ogg" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) em OGG 65Kbps</p>
+
+        <h3></h3>
+        <h4>Espectrogramas MP3</h4>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/espectrograma_sandman_128.png" alt="Espectrogramas do trecho da musica Enter Sandman" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Espectrogramas do trecho da musica Enter Sandman</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/espectrograma_sandman_64.png" alt="Espectrogramas do trecho da musica Enter Sandman" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Espectrogramas do trecho da musica Enter Sandman</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/espectrograma_sandman_32.png" alt="Espectrogramas do trecho da musica Enter Sandman" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Espectrogramas do trecho da musica Enter Sandman</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/espectrograma_sandman_16.png" alt="Espectrogramas do trecho da musica Enter Sandman" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Espectrogramas do trecho da musica Enter Sandman</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/espectrograma_sandman_8.png" alt="Espectrogramas do trecho da musica Enter Sandman" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Espectrogramas do trecho da musica Enter Sandman</p>
+        
+
+        <h3></h3>
+        <h4>Espectrogramas MP3 com taxa variável</h4>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/espectrograma_sandman_320var.png" alt="Espectrogramas do trecho da musica Enter Sandman" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Espectrogramas do trecho da musica Enter Sandman</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/espectrograma_sandman_128var.png" alt="Espectrogramas do trecho da musica Enter Sandman" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Espectrogramas do trecho da musica Enter Sandman</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/espectrograma_sandman_65var.png" alt="Espectrogramas do trecho da musica Enter Sandman" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Espectrogramas do trecho da musica Enter Sandman</p>
+
+
+        <h3>Tabela de tamanho dos arquivos após codificação</h3>
+        <div class="gallery">
+            <img src="assets/img/lab 8/tabela.png" alt="Tabela de tamanho de arquivos" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Tabela de tamanho de arquivos</p>
+
+        <h3>Comentários e conclusões</h3>  
+        <p class="resumo">O experimento realizado permitiu analisar as diferenças na qualidade de áudio e no tamanho dos arquivos após codificações em diferentes 
+            taxas de bits e formatos, utilizando FFmpeg. Observou-se que, à medida que a taxa de bits diminui (128, 64, 32, 16 e 8 Kbps), há uma perda progressiva de 
+            qualidade no áudio, que se torna perceptível tanto auditivamente quanto visualmente nos espectrogramas. Essa perda é esperada devido à redução na quantidade 
+            de informações que o codec retém, especialmente nas altas frequências, que são mais suscetíveis à compressão.</p>
+        <p class="resumo">Ao comparar os codecs MP3 e OGG, notou-se que o MP3, por ser mais amplamente utilizado e suportado, é um padrão de fato para aplicações como streaming, 
+            compartilhamento e reprodução em dispositivos variados. Já o OGG, embora menos popular em termos de suporte universal, é conhecido por oferecer melhor qualidade de 
+            áudio em taxas de bits mais baixas, sendo frequentemente utilizado em aplicações de código aberto e para streaming com foco em eficiência.</p>
+        <p class="resumo">Os espectrogramas mostraram diferenças marcantes conforme a qualidade diminui. Para arquivos com 128 Kbps, a qualidade do áudio e as características 
+                espectrais são próximas ao original, com mínima degradação. Em 64 e 32 Kbps, começam a surgir cortes mais evidentes nas altas frequências, reduzindo a clareza e o 
+                detalhamento do áudio. Já em 16 e 8 Kbps, a degradação é severa, com perda significativa de frequências médias e altas, resultando em um som distorcido e artificial.</p>
+        <p class="resumo">Quanto à redução do tamanho dos arquivos, observou-se que a compressão é altamente eficiente para cada redução na taxa de bits. Arquivos em 128 Kbps apresentaram 
+            uma boa relação entre qualidade e tamanho, sendo ideais para aplicações onde qualidade ainda é uma prioridade. Em 64 e 32 Kbps, a redução de tamanho foi significativa, com uma 
+            compressão útil para economizar espaço em armazenamento ou transmissão, mas já com perdas perceptíveis. Em 16 e 8 Kbps, os arquivos alcançaram tamanhos mínimos, adequados para 
+            aplicações de voz ou onde a qualidade sonora não é crítica, como transmissões em banda estreita.</p>
+        <p class="resumo">No geral, o experimento destacou o impacto das diferentes taxas de codificação e dos codecs na qualidade do áudio, no tamanho dos arquivos e nas aplicações práticas, 
+            oferecendo uma visão clara dos compromissos entre qualidade e eficiência.</p>
+
+
+
+        <!-- PARTE DE MIDI e Resposta Impulsiva -->
+        <h3></h3>
+        <h2></h2>
+        <h2></h2>
+        <h2>Laboratório de MIDI e Resposta Impulsiva</h2>
+        <h3>Objetivos</h3>
+        <ul>
+            <li>Simular a reprodução em salas com Respostas Impulsivas diversas</li>
+        </ul>
+
+        <h3>Materiais</h3>
+        <ul>
+            <li>Google Colab</li>
+            <li>Bibliotecas do OpenCV e Python</li>
+            <li>Áudios de ambiente</li>
+            <li>Áudios de trechos de músicas</li>
+        </ul>
+        <h3>Metodologia</h3>
+        <p class="resumo">Inicialmente, realizamos o download de áudios de sons sendo emitidos em ambientes variados, sendo um pequeno e fechado, um auditório médio, e um ambiente grande. 
+            Em seguida, utilizamos o Google Colab e os códigos disponibilizados abaixo para realizar a análise da resposta ao impulso desses áudios, a normalização deles e a convolução desses 
+            trechos normalizados com os trechos das músicas de cada participante.
+        </p>
         <p class="resumo"></p>
         <p><a href="assets/download/Lab_RespostaImpulsiva.ipynb" download="Lab_RespostaImpulsiva.ipynb">Clique aqui para baixar o arquivo do código utilizado (MIDI e Resposta Impulsiva)</a></p>
+        <p class="resumo"></p>
+        <p><a href="https://www.openair.hosted.york.ac.uk/?page_id=36">Clique aqui para visualizar e baixar os arquivos de sons ambiente</a></p>
 
-      
-    <h3>Comentários e conclusões</h3>  
-    <p class="resumo"></p>
+        
 
+        <h3>Áudios de ambiente escolhidos</h3>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/escadaria.wav" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: áudio de palma batida em ambiente de escadaria</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/escadaria.jpg" alt="Imagem de escadaria" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Imagem de escadaria</p>
+
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/auditorio.wav" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: áudio de palma batida em ambiente de auditório</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/auditorio.jpg" alt="Imagem de auditório" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Imagem de auditório</p>
+
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/reator.wav" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: áudio de palma batida em ambiente de sala de reator nuclear</p>
+        <p class="resumo"></p>
+        <div class="gallery">
+            <img src="assets/img/lab 8/lucas/reator.jpg" alt="Imagem de sala de reator nuclear" onclick="expandImage(this)">
+        </div>
+        <p class="trecho">alt = Imagem de sala de reator nuclear</p>
+
+        <h3>Trecho da música nos ambientes escolhidos</h3>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandaman_escadaria.wav" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) como se estivesse sendo tocada em uma escadaria</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandaman_auditorio.wav" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) como se estivesse sendo tocada em um auditorio</p>
+        <audio controls class="audio">
+            <source src="assets/audio/lab 8/Lucas/Enter_sandaman_reator.wav" type="audio/wav">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: trecho da música Enter Sandman (Metallica) como se estivesse sendo tocada em uma sala de reator nuclear</p>
+
+
+
+        <h3>Comentários e conclusões</h3>  
+        <p class="resumo">A simulação da reprodução de trechos musicais em ambientes distintos, utilizando as respostas impulsivas (IRs) desses espaços, 
+            revelou como a acústica influencia diretamente na percepção sonora. As IRs escolhidas desempenham um papel fundamental na convolução, pois são 
+            responsáveis por modelar as características específicas de cada ambiente no som original. Por exemplo, uma IR de um ambiente pequeno e fechado 
+            adiciona reflexões rápidas e intensas, resultando em um som mais abafado e íntimo, enquanto a IR de um auditório médio proporciona reverberações 
+            mais equilibradas, típicas de locais projetados para música ao vivo. Já a IR de um ambiente grande gera um som com longas caudas de reverberação, 
+            criando uma sensação de amplitude e profundidade.</p>
+        <p class="resumo">No entanto, o experimento apresentado não utilizou MIDI. Em vez disso, foram trabalhados diretamente arquivos de áudio no formato 
+            .wav, que já contêm as formas de onda das músicas. O uso de áudios pré-gravados simplifica o processo, pois evita a necessidade de sintetizar sons a 
+            partir de instruções MIDI. Essa abordagem é eficiente para analisar como a convolução afeta sons reais, já que os arquivos .wav carregam todas as características 
+            do áudio original, como timbre e dinâmica, tornando a análise mais próxima do resultado final que se espera em aplicações práticas.</p>
+
+        <div id="popup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img class="popup-content" id="expandedImage">
+            <div id="caption"></div>
+        </div>
     </main>
 
     <footer>
