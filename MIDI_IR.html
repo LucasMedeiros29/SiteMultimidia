@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Seminário 2</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img class="ufabc" src="assets/img/ufabc.png" alt="ufabc logo"></a>
+        <h1>Seminário 2</h1>
+        <h2>MIDI e Resposta ao Impulso</h2>
+    </header>
+
+    <main>
+        <audio controls class="audio">
+            <source src="assets/audio/MIDI.waptt.opus" type="audio/ogg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p>Alt: Controlador de áudio com as informações da página inicial</p>
+
+        <div id="popup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img class="popup-content" id="expandedImage">
+            <div id="caption"></div>
+        </div>
+        
+        <h3>Introdução</h3>
+        <p class="texto_dct">O MIDI (Musical Instrument Digital Interface) é um protocolo de comunicação 
+            padronizado que permite a interconexão e o controle de instrumentos musicais eletrônicos, computadores e 
+            outros dispositivos digitais relacionados à produção de música, sendo criado em 1983 por um consórcio de
+             empresas em decorrência da necessidade de padronizar a comunicação entre equipamentos de diferentes fabricantes, 
+             permitindo que dispositivos como sintetizadores, sequenciadores e controladores pudessem interagir sem dificuldades.</p>
+        <p class="texto_dct">O protocolo MIDI não transmite áudio diretamente, mas sim dados que representam eventos musicais, como notas, 
+            velocidade, pressão de teclas, modulação e outros parâmetros relacionados à performance musical. Esses dados MIDI podem ser usados 
+            para controlar dispositivos musicais eletrônicos, para gravar e reproduzir sequências musicais, e para facilitar a comunicação entre diferentes equipamentos musicais.</p>
+        <p class="texto_dct">A Resposta Impulsiva (IR) de um sistema é a sua resposta à aplicação de um impulso ideal como entrada. 
+            Em termos simples, representa como o sistema reage a uma excitação pontual no tempo. No âmbito do áudio, a IR descreve as 
+            características acústicas de um ambiente ou dispositivo, incluindo reverberação, eco e frequências ressonantes.</p>
+
+        <h3></h3>
+        <h2>MIDI</h2>
+        <div class="gallery">
+            <img src="assets/img/MIDI/1.jpg" alt="Controlador MIDI" onclick="expandImage(this)">
+        </div>
+        <h3>Arquitetura do Protocolo MIDI</h3>
+        <p class="texto_dct"> Mensagens de canal (Channel Messages): O protocolo MIDI organiza as informações em mensagens que controlam eventos musicais. As principais incluem:</p>
+        <ul>
+            <li>Note On e Note Off: Indicam quando uma nota deve ser tocada e quando deve ser encerrada.</li>
+            <li>Velocity: Determina a intensidade da nota (o quão forte ou fraco ela é tocada).</li>
+            <li>Control Change (CC): Permite controlar parâmetros como volume, modulação ou efeitos em tempo real.</li>
+        </ul>
+        <p class="texto_dct">Mensagens de sistema (System Messages): Essas mensagens tratam da comunicação geral entre dispositivos MIDI, como:</p>
+        <ul>
+            <li>System Exclusive (SysEx): Utilizadas para comandos específicos de fabricantes.</li>
+            <li>MIDI Time Code: Para sincronização precisa entre diferentes dispositivos.</li>
+        </ul>
+
+
+        <h3>Codificação e Formato</h3>
+        <p class="texto_dct">Um arquivo MIDI é composto por eventos musicais dispostos em trilhas. Cada trilha contém instruções sobre notas, controle de 
+            instrumentos e sincronização temporal. O arquivo é incrivelmente compacto, tornando-o ideal para transferência e edição.</p>
+        <p class="texto_dct">Os eventos MIDI são definidos por tempo relativo e contêm informações como número da nota (pitch), duração e intensidade, mas 
+            não incluem informações sobre timbre ou gravação de som.</p>
+
+        <div class="gallery">
+            <img src="assets/img/MIDI/3.jpg" alt="Controlador MIDI" onclick="expandImage(this)">
+        </div>
+
+        <h3>Sincronização e Comunicação</h3>
+        <p class="texto_dct">O MIDI opera através de comunicação serial, transmitindo dados em uma velocidade de 31,25 kbps. Interfaces MIDI conectam dispositivos 
+            físicos via cabos padrão DIN-5 ou através de USB nos modelos modernos.</p>
+        <p class="texto_dct">O protocolo MIDI facilita a sincronização entre dispositivos como baterias eletrônicas, sintetizadores e software de produção, permitindo 
+            performances coesas e gravações precisas.</p>
+
+        <div class="gallery">
+            <img src="assets/img/MIDI/2.jpg" alt="Controlador MIDI" onclick="expandImage(this)">
+        </div>
+        <p class="texto_dct">A MIDI permite que vários instrumentos sejam tocados em um único controlador (muitas vezes um teclado, como retratado aqui), o que torna as configurações de palco muito mais portáteis.</p>
+        
+        <h3>Vantagens</h3>
+
+        <p class="texto_dct">Tamanho compacto dos arquivos, permitindo edições rápidas e transferência fácil.</p>
+        <p class="texto_dct">Flexibilidade para reprodução em diferentes instrumentos e configurações.</p>
+        <p class="texto_dct">Integração com sistemas de produção e performance ao vivo.</p>
+
+        <h3>Limitações</h3>
+        <p class="texto_dct">Dependência de dispositivos ou sintetizadores externos para produção de som.</p>
+        <p class="texto_dct">Não captura gravações de áudio reais, limitando a representatividade sonora em alguns casos.</p>
+
+        <h3></h3>
+        <h2>Resposta Impulsiva (IR)</h2>
+        <h3>Conceito e Propriedades Matemáticas</h3>
+        <p class="texto_dct">A Resposta Impulsiva (IR) descreve a reação de um sistema linear e invariante no tempo (LTI) a um impulso 
+            unitário no domínio do tempo. Um impulso é definido como um sinal ideal com amplitude infinita e duração infinitesimal, contendo 
+            energia unitária. A IR é essencial para caracterizar completamente o comportamento dinâmico de sistemas LTI.</p>
+            <div class="gallery">
+                <img src="assets/img/MIDI/5.png" alt="Gráfico de IR" onclick="expandImage(this)">
+            </div>
+        <p class="texto_dct">Propriedades Matemáticas da IR:</p>
+        <p class="texto_dct">Linearidade: A resposta de um sistema LTI a qualquer sinal de entrada pode ser obtida pela convolução do sinal com a IR.</p>
+        <p class="texto_dct">Estabilidade: Um sistema é estável se sua IR for absolutamente somável (em sistemas discretos) ou integrável (em sistemas contínuos).</p>
+        <p class="texto_dct">Função de Transferência: A transformada de Fourier ou de Laplace da IR define a função de transferência do sistema, permitindo análise no domínio da frequência.</p>
+
+        <h3>Medida da IR</h3>
+        <p class="texto_dct">Técnicas de Captura:</p>
+        <p class="texto_dct">Impulso Curto: Um estalo ou clique é usado para excitar o sistema. Este método é simples, mas pode apresentar baixo desempenho em ambientes com ruído.</p>
+        <p class="texto_dct">Sweep Sinusoidal: Um sinal que percorre todas as frequências audíveis é enviado ao sistema. A resposta é registrada e deconvoluída para obter a IR. Este é um dos 
+            métodos mais precisos.</p>
+        <p class="texto_dct">Ruído Branco ou Rosa: Utiliza-se um sinal de amplo espectro para excitar o sistema. A IR é calculada correlacionando a entrada e a saída.</p>
+
+        <p class="texto_dct">Equipamentos Necessários:</p>
+        <p class="texto_dct">Microfones de Alta Precisão: Para capturar a resposta com detalhes fiéis.</p>
+        <p class="texto_dct">Interfaces de Áudio: Garantem uma transmissão e gravação de sinais sem distorções.</p>
+        <p class="texto_dct">Softwares de Análise: Como MATLAB, Room EQ Wizard ou DAWs, para processar os dados e calcular a IR.</p>
+
+        <h3>Aplicações</h3>
+        <p class="texto_dct">Reverberação e Simulação Acústica:
+            IRs capturadas em salas específicas permitem simular as características acústicas desses ambientes em gravações digitais, como salas de concerto, igrejas ou estòdios.</p>
+        <p class="texto_dct">Efeitos de Áudio e Produção Musical:
+            Softwares de convolução utilizam IRs para criar efeitos como reverberação natural e emulações de dispositivos analógicos.</p>
+        <p class="texto_dct">Modelagem de Equipamentos:
+            A IR é usada para capturar o comportamento tonal de amplificadores, alto-falantes e microfones, permitindo reproduzir fielmente as características desses dispositivos. </p>
+        <p class="texto_dct">Realidade Virtual e Aumentada:
+            Na criação de ambientes imersivos, a IR ajuda a projetar experiências sonoras convincentes ao adaptar os sons às características acústicas do cenário virtual.</p>
+        <div class="gallery">
+            <img src="assets/img/MIDI/4.png" alt="BOSS - IR-200" onclick="expandImage(this)">
+        </div>
+        <div class="gallery">
+            <img src="assets/img/MIDI/6.png" alt="Pedais de IR" onclick="expandImage(this)">
+        </div>
+
+        <h3>Visualização e Análise</h3>
+        <p class="texto_dct">Domínio do Tempo:
+            No domínio do tempo, a IR é representada como uma sequência de picos e decaimentos. Esses elementos correspondem às reflexões e reverberações do sistema ou ambiente.</p>
+        <p class="texto_dct">Domínio da Frequência:
+            A transformada da IR para o domínio da frequência revela as ressonâncias e atenuações do sistema, sendo utilizada para criar equalizações e ajustes acústicos.</p>
+        <p class="texto_dct">Softwares e Ferramentas:
+            Softwares como SpectraLab, REW ou ferramentas em MATLAB fornecem gráficos e métricas detalhadas para a análise da IR, auxiliando engenheiros de áudio a otimizar performances acústicas.</p>
+        <p class="texto_dct">Interpretação de Resultados:
+            A visualização ajuda a identificar problemas acústicos, como ressonâncias indesejadas, e a aplicar correções através de filtros ou ajustes físicos no ambiente</p>
+
+        <h3></h3>
+        <h2>Interseção entre MIDI e IR</h2>
+        <p class="texto_dct">Softwares de áudio modernos permitem o uso combinado de MIDI e IR para criar experiências sonoras imersivas e versáteis. Arquivos MIDI controlam sintetizadores e 
+            samplers, enquanto IRs adicionam espaços acústicos ou efeitos personalizados. Essa combinação é comum em Digital Audio Workstations (DAWs), onde plugins de convolução usam IRs 
+            para criar reverberação ou simular equipamentos.</p>
+        <p class="texto_dct">Em um fluxo de produção, as notas MIDI podem ser programadas para sequenciar melodias, enquanto as IRs aplicam ambiências naturais ou artificiais ao resultado 
+            final. Por exemplo, um piano digital controlado por MIDI pode ser enriquecido com a IR de uma sala de concerto.</p>
+        <p class="texto_dct">Técnicas que combinam MIDI e IR são amplamente utilizadas em jogos e cinema. Um controlador MIDI pode alterar dinamicamente a IR aplicada, ajustando a percepção de espaço em cenas diferentes, 
+            como um ambiente aberto ou um túnel.</p>
+        <p class="texto_dct">Porém, a aplicação de IR em tempo real pode introduzir latência, dificultando a sincronização com sinais MIDI, que normalmente possuem uma resposta rápida. 
+            Soluções incluem o uso de processadores dedicados ou configurações otimizadas em DAWs.</p>
+        <p class="texto_dct">Além disso, mem todos os dispositivos ou plugins suportam integração total de MIDI e IR. Porém, muitos fabricantes estão lançando ferramentas que combinam essas 
+            tecnologias, como samplers de instrumentos que já incorporam convoluções baseadas em IR.</p>
+
+        <h3></h3>
+        <h2>Casos Práticos e Exemplos</h2>
+        <p class="texto_dct">Produção de Trilha Sonora para Jogos</p>
+        <p class="texto_dct">Na produção de trilhas sonoras para jogos, MIDI é amplamente utilizado para controlar instrumentos virtuais e sequências musicais, enquanto IRs adicionam 
+            realismo e profundidade espacial. Por exemplo, ao criar uma trilha para uma cena que se passa em uma caverna, a trilha MIDI pode ser enriquecida com a IR de uma caverna real, 
+            criando uma experiência auditiva imersiva.</p>
+        <p class="texto_dct">Simulação de Espaços Históricos</p>
+        <p class="texto_dct">Em projetos de conservação histórica ou de design de som, IRs podem capturar a acústica de espaços como igrejas ou teatros antigos. Quando combinadas com 
+            arranjos controlados por MIDI, é possível recriar performances que simulam como uma música soaria nesses ambientes, mesmo sem acesso ao espaço físico.</p>
+        <p class="texto_dct">Performances ao Vivo e Instalações Interativas</p>
+        <p class="texto_dct">Em performances ao vivo, controladores MIDI são usados para manipular parâmetros em tempo real, como volume e efeitos, enquanto plugins baseados em IR criam 
+            espaços dinâmicos que se adaptam à execução. Instalações artísticas interativas também utilizam MIDI e IR para criar experiências responsivas ao movimento e som do público.</p>
+
+        <h3></h3>
+        <h2>Tecnologias e Ferramentas Relevantes</h2>
+        <p class="texto_dct">Softwares de Produção de Áudio</p>
+        <ul>
+            <li>DAWs (Digital Audio Workstations): Plataformas como Ableton Live, Logic Pro e Pro Tools oferecem suporte integrado para MIDI e IR, permitindo workflows fluídos.</li>
+            <div class="gallery">
+                <img src="assets/img/MIDI/7.jpg" alt="Ableton Live" onclick="expandImage(this)">
+            </div>
+            <div class="gallery">
+                <img src="assets/img/MIDI/8.png" alt="Pro Tools" onclick="expandImage(this)">
+            </div>
+            <p class="resumo"></p>
+            <li>Plugins de Convolução: Ferramentas como Altiverb e Space Designer são amplamente utilizadas para aplicar IRs em trilhas controladas por MIDI, simulando espaços acústicos realistas.</li>
+            <div class="gallery">
+                <img src="assets/img/MIDI/9.png" alt="Audio Ease Altiverb 8" onclick="expandImage(this)">
+            </div>
+        </ul>
+        <p class="texto_dct">Controladores MIDI Avançados</p>
+        <p class="texto_dct">Controladores MIDI modernos, como Akai APC ou Native Instruments Komplete Kontrol, permitem controle dinâmico de sequências e parâmetros de efeito em tempo real. Esses 
+            dispositivos têm integração direta com softwares de convolução para uso criativo de IR.</p>
+            <div class="gallery">
+                <img src="assets/img/MIDI/10.png" alt="AKAI APC40 MkII" onclick="expandImage(this)">
+            </div>
+        <p class="texto_dct">Tecnologias de Captura de IR</p>
+        <p class="texto_dct">Microfones omnidirecionais de alta qualidade e equipamentos de gravação são essenciais para capturar respostas impulsivas. Softwares como REW (Room EQ Wizard) e 
+            ferramentas dedicadas como Smaart ajudam na análise e processamento das IRs capturadas.</p>
+
+            
+
+        <h3></h3>
+        <h2>Tendências</h2>
+        <p class="texto_dct">IA e Aprendizado de Máquina: Tecnologias emergentes estão explorando o uso de IA para gerar IRs sintéticas e adaptar espaços acústicos em tempo real.</p>
+        <p class="texto_dct">Integração com Realidade Virtual e Aumentada: MIDI e IR estão sendo usados para criar experiências sonoras imersivas em aplicações de VR e AR, onde o som 
+            responde ao movimento e à posição do usuário.</p>
+        <p class="texto_dct">Evolução de Plugins e Hardware: Ferramentas mais acessíveis e otimizadas estão sendo lançadas, permitindo que a combinação de MIDI e IR seja mais difundida 
+            entre criadores de conteúdo multimídia.</p>
+
+
+
+        <h3>Conclusão</h3>
+        <p class="texto_dct">O MIDI (Musical Instrument Digital Interface) e o IR (Reconhecimento de Imagem) são tecnologias que têm transformado diversas áreas, como a música, a comunicação 
+            e a inteligência artificial. O MIDI permite a troca de informações musicais entre instrumentos e softwares, facilitando a criação e manipulação de sons digitais, enquanto o IR 
+            foca no processamento de imagens, com ampla aplicação em sistemas de visão computacional e IA. A interação entre essas duas tecnologias abre novas possibilidades, como ambientes 
+            interativos que combinam áudio e imagem, oferecendo experiências mais imersivas e inovadoras.</p>
+        <p class="texto_dct">Em casos práticos, o MIDI é essencial em performances musicais e na produção de música digital, enquanto o IR é utilizado em áreas como segurança, medicina e 
+            automação. A convergência dessas tecnologias permite a criação de interfaces mais dinâmicas e intuitivas, onde som e imagem se complementam. O avanço das ferramentas e tecnologias, 
+            como DAWs para MIDI e redes neurais para IR, além do uso de sensores mais avançados, indica um futuro promissor, com tendências voltadas para a integração de IA e interfaces 
+            sensoriais, proporcionando experiências cada vez mais naturais e imersivas.</p>
+
+        <h3>Referências</h3>
+        <ul>
+            <li>https://www.sunsetmusic.com.br/midi-voce-sabe-o-que-e#:~:text=MIDI%2C%20que%20significa%20%E2%80%9CInterface%20de,teclados%2C%20computadores%20e%20outros%20equipamentos</li>
+            <li>https://pt.wikipedia.org/wiki/MIDI</li>
+            <li>https://blog.landr.com/pt-br/o-que-e-midi-o-guia-iniciante-para-ferramenta-mais-poderosa-da-musica/</li>
+            <li>https://www.youtube.com/watch?v=P2QErvHLfuM</li>
+            <li>https://www.youtube.com/watch?v=KHq6bl5HLps</li>
+            <li>https://romainversa.com/guia-pedais-ir-resposta-de-impulso/#:~:text=Uma%20resposta%20de%20impulso%2C%20em,sala%20e%20o%20equipamento%20perif%C3%A9rico.</li>
+            <li>https://pt.wikipedia.org/wiki/Resposta_ao_impulso</li>
+            <li>https://portalacustica.info/aplicacoes-e-curiosidades-sobre-o-processamento-de-sinais-acusticos/</li>
+            <li>https://unreal-music.com/pt/o-que-e-uma-reverberacao-da-convolucao/</li>
+    </main>
+
+    <footer>
+        <p>Página confeccionada para a disciplina de Codificação de Sinais Multimidia 2024.3</p>
+        <p>Professor: Mário Minami</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
