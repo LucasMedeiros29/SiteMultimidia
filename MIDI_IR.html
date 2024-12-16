@@ -48,22 +48,9 @@
         <h3></h3>
         <h2>MIDI</h2>
         <div class="gallery">
-            <img src="assets/img/MIDI/1.jpg" alt="Controlador MIDI" onclick="expandImage(this)">
+            <img src="assets/img/MIDI/11.png" alt="Esquema de transmissão MIDI" onclick="expandImage(this)">
         </div>
-        <h3>Arquitetura do Protocolo MIDI</h3>
-        <p class="texto_dct"> Mensagens de canal (Channel Messages): O protocolo MIDI organiza as informações em mensagens que controlam eventos musicais. As principais incluem:</p>
-        <ul>
-            <li>Note On e Note Off: Indicam quando uma nota deve ser tocada e quando deve ser encerrada.</li>
-            <li>Velocity: Determina a intensidade da nota (o quão forte ou fraco ela é tocada).</li>
-            <li>Control Change (CC): Permite controlar parâmetros como volume, modulação ou efeitos em tempo real.</li>
-        </ul>
-        <p class="texto_dct">Mensagens de sistema (System Messages): Essas mensagens tratam da comunicação geral entre dispositivos MIDI, como:</p>
-        <ul>
-            <li>System Exclusive (SysEx): Utilizadas para comandos específicos de fabricantes.</li>
-            <li>MIDI Time Code: Para sincronização precisa entre diferentes dispositivos.</li>
-        </ul>
-
-
+        
         <h3>Codificação e Formato</h3>
         <p class="texto_dct">Um arquivo MIDI é composto por eventos musicais dispostos em trilhas. Cada trilha contém instruções sobre notas, controle de 
             instrumentos e sincronização temporal. O arquivo é incrivelmente compacto, tornando-o ideal para transferência e edição.</p>
@@ -85,8 +72,24 @@
         </div>
         <p class="texto_dct">A MIDI permite que vários instrumentos sejam tocados em um único controlador (muitas vezes um teclado, como retratado aqui), o que torna as configurações de palco muito mais portáteis.</p>
         
-        <h3>Vantagens</h3>
+        <h3>Arquitetura do Protocolo MIDI</h3>
+        <p class="texto_dct"> Mensagens de canal (Channel Messages): O protocolo MIDI organiza as informações em mensagens que controlam eventos musicais. As principais incluem:</p>
+        <ul>
+            <li>Note On e Note Off: Indicam quando uma nota deve ser tocada e quando deve ser encerrada.</li>
+            <li>Velocity: Determina a intensidade da nota (o quão forte ou fraco ela é tocada).</li>
+            <li>Control Change (CC): Permite controlar parâmetros como volume, modulação ou efeitos em tempo real.</li>
+        </ul>
+        <p class="texto_dct">Mensagens de sistema (System Messages): Essas mensagens tratam da comunicação geral entre dispositivos MIDI, como:</p>
+        <ul>
+            <li>System Exclusive (SysEx): Utilizadas para comandos específicos de fabricantes.</li>
+            <li>MIDI Time Code: Para sincronização precisa entre diferentes dispositivos.</li>
+        </ul>
 
+        <h3>Vantagens</h3>
+        <div class="gallery">
+            <img src="assets/img/MIDI/12.png" alt="Esquema de transmissão MIDI" onclick="expandImage(this)">
+        </div>
+        
         <p class="texto_dct">Tamanho compacto dos arquivos, permitindo edições rápidas e transferência fácil.</p>
         <p class="texto_dct">Flexibilidade para reprodução em diferentes instrumentos e configurações.</p>
         <p class="texto_dct">Integração com sistemas de produção e performance ao vivo.</p>
